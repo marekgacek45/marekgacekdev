@@ -8,12 +8,13 @@
         <Header
            ></Header>
         
-        <!-- <main>
-            <Services :comments="comments" />
-            <Blog :posts="posts" />
-            <YouTube></YouTube>
-        </main> -->
-        <main class='p-48'>lorem303402304</main>
+        <main>
+            <About :comments="comments" />
+            <!-- <About  /> -->
+            <!-- <Blog :posts="posts" />
+            <YouTube></YouTube> -->
+        </main>
+        
     </Layout>
 </template>
 
@@ -22,7 +23,7 @@ import Layout from "@/Layouts/Layout.vue";
 
 
 import Header from "@/Pages/Home/Sections/Header.vue";
-// import Services from "@/Pages/Home/Sections/Services.vue";
+import About from "@/Pages/Home/Sections/About.vue";
 // import Blog from "@/Pages/Home/Sections/Blog.vue";
 // import YouTube from "./Sections/YouTube.vue";
 
