@@ -13,7 +13,7 @@
             <Blog :posts="posts" />
             <YouTube></YouTube>
         </main> -->
-        <!-- <main class='p-48'>lorem303402304</main> -->
+        <main class='p-48'>lorem303402304</main>
     </Layout>
 </template>
 

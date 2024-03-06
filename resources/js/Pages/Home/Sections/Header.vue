@@ -22,8 +22,8 @@
                     organizacji
                 </h2>
                 <div>
-                    <!-- <Link :href="route('portfolio')"><primary-button aria-label="Portfolio">Portfolio</primary-button></Link> -->
                     <Link href="/"><primary-button aria-label="Portfolio">Portfolio</primary-button></Link>
+                    <!-- <Link href="route('portfolio')"><primary-button aria-label="Portfolio">Portfolio</primary-button></Link> -->
                 </div>
             </div>
             <!-- IMAGE---->
@@ -34,13 +34,13 @@
                     src="/assets/images/home/header--big.webp"
                     alt=""
                     class="hidden md:block h-full object-cover box-shadow"
-                    loading="lazy"
+                    
                 />
                 <img
                     src="/assets/images/home/header--small.webp"
                     alt=""
                     class="md:hidden h-full object-cover box-shadow"
-                    loading="lazy"
+                   
                 />
             </div>
         </div>
