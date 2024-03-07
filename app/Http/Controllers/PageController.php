@@ -25,6 +25,11 @@ class PageController extends Controller
             ],
         ];
 
-        return Inertia('Home/Index',['comments'=>$comments]);
+        return Inertia('Home/Index', ['comments' => $comments]);
+    }
+
+    public function about()
+    {
+        return Inertia('About/Index');
     }
 }
