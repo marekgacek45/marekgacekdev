@@ -53,7 +53,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, defineProps } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import OldSchoolCard from "../OldSchoolCard.vue";
 
 const props = defineProps({

@@ -11,8 +11,8 @@
         <main>
             <About :comments="comments" />
             <!-- <About  /> -->
-            <!-- <Blog :posts="posts" />
-            <YouTube></YouTube> -->
+            <Blog  />
+            <YouTube></YouTube>
         </main>
         
     </Layout>
@@ -24,8 +24,8 @@ import Layout from "@/Layouts/Layout.vue";
 
 import Header from "@/Pages/Home/Sections/Header.vue";
 import About from "@/Pages/Home/Sections/About.vue";
-// import Blog from "@/Pages/Home/Sections/Blog.vue";
-// import YouTube from "./Sections/YouTube.vue";
+import Blog from "@/Pages/Home/Sections/Blog.vue";
+import YouTube from "@/Pages/Home/Sections/YouTube.vue";
 
 
 
