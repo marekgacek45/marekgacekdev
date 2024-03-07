@@ -32,4 +32,8 @@ class PageController extends Controller
     {
         return Inertia('About/Index');
     }
+    public function services()
+    {
+        return Inertia('Services/Index');
+    }
 }

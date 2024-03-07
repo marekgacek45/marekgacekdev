@@ -45,3 +45,4 @@ require __DIR__ . '/auth.php';
 
 Route::get('/', [PageController::class, 'home']);
 Route::get('/o_mnie', [PageController::class, 'about']);
+Route::get('/uslugi', [PageController::class, 'services']);
