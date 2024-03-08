@@ -36,4 +36,39 @@ class PageController extends Controller
     {
         return Inertia('Services/Index');
     }
+    public function blog()
+    {
+        return Inertia('Blog/Index');
+    }
+    public function contact()
+    {
+        return Inertia('Contact/Index');
+    }
+    public function portfolio()
+    {
+
+$categories=[
+    [
+    'id'=>'1',
+    'name'=>'test'
+],
+    [
+    'id'=>'2',
+    'name'=>'test'
+],
+];
+$projects = [
+    [
+        'id'=>'1',
+        'title'=>'test',
+        'site_link'=>'test.pl',
+        'image'=>'',
+        'youtube_link'=>'',
+        'description'=>'lorem ipsum'
+    ],
+];
+
+
+        return Inertia('Portfolio/Index',['categories'=>$categories,'projects'=>$projects]);
+    }
 }
