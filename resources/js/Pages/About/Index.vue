@@ -5,9 +5,8 @@ import FirstSection from "./FirstSection.vue";
 import SecondSection from './SecondSection.vue'
 
 const props = defineProps({
-    technologies:Array
+    tools:Array
 })
-
 
 
 </script>
@@ -25,7 +24,7 @@ const props = defineProps({
             
             >
 
-             <FirstSection :technologies="technologies"/>
+             <FirstSection :tools="tools"/>
             <SecondSection/> 
             
         </main>

@@ -8,20 +8,20 @@
                         @submit.prevent="submit"
                         enctype="multipart/form-data"
                     >
-                        <Field>
-                            <Input
-                                type="text"
-                                id="link"
-                                name="link"
-                                v-model="form.link"
-                                required
-                            />
-                            <Label for="link" id="link">Link</Label>
+                    <Field>
+                                <Input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    v-model="form.name"
+                                    required
+                                />
+                                <Label for="name" id="name">Nazwa</Label>
 
-                            <Error v-if="form.errors.link">{{
-                                form.errors.link
-                            }}</Error>
-                        </Field>
+                                <Error v-if="form.errors.name">{{
+        form.errors.name
+    }}</Error>
+                            </Field>
                         <Field>
                             <div class="flex justify-start items-center gap-4">
                                 <img :src="logo" alt="" class="w-12" />
@@ -34,19 +34,7 @@
                                 }}</Error>
                             </div>
                         </Field>
-                        <Field>
-                            <TextArea
-                                id="content"
-                                name="content"
-                                v-model="form.content"
-                                required
-                            ></TextArea>
-                            <Label for="content" id="content">Treść</Label>
-
-                            <Error v-if="form.errors.content">{{
-                                form.errors.content
-                            }}</Error>
-                        </Field>
+                     
 
                         <Field
                             ><PrimaryButton type="submit"
@@ -79,20 +67,19 @@ import { router } from "@inertiajs/vue3";
 const props = defineProps({
     form: Object,
     errors: Object,
-    testimonial: Object,
+    tool: Object,
 });
 
 const form = useForm({
-    link: props.testimonial.link,
-    logo: props.testimonial.logo,
-    content: props.testimonial.content,
+    name: props.tool.name,
+    logo: props.tool.logo,
 });
 
 // const fileChange = (e) => {
 //     form.logo = e.target.files[0];
 // };
 
-const logo = "/storage/" + props.testimonial.logo;
+const logo = "/storage/" + props.tool.logo;
 
 console.log(logo);
 
@@ -103,11 +90,11 @@ const submit = () => {
     // });
 
     console.log(form);
-    router.post(route("admin.testimonial.update", props.testimonial.id), {
+    router.post(route("admin.tool.update", props.tool.id), {
         _method: "put",
+        name: form.name,
         logo: form.logo,
-        link: form.link,
-        content: form.content,
+        
     });
 };
 </script>

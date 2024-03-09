@@ -47,7 +47,7 @@ To dzięki nim mogę realizować swoją wizję i tworzyć strony, które <span c
         <!--END CONTAINER---->
         <!-- MARQUEE---->
         <div class="flex justify-center pb-12">
-           <TechsMarquee :technologies="technologies"/>
+           <TechsMarquee :tools="tools"/>
         </div>
     </section>
 
@@ -59,5 +59,5 @@ To dzięki nim mogę realizować swoją wizję i tworzyć strony, które <span c
 import TechsMarquee from "@/Pages/About/TechsMarquee.vue"
 
 defineProps({
-    technologies:Array
+    tools:Object
 })</script>

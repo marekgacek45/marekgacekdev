@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Testimonial;
+use App\Models\Tool;
 use Inertia\Inertia;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -18,7 +19,12 @@ class PageController extends Controller
 
     public function about()
     {
-        return Inertia('About/Index');
+
+$tools = Tool::all();
+
+
+
+        return Inertia('About/Index',['tools'=>$tools]);
     }
     public function services()
     {

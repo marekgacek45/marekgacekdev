@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ToolController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimonialController;
 
@@ -54,20 +55,22 @@ Route::post('/kontakt', [FormController::class, 'contact'])->name('contact.form'
 Route::get('/blog', [PageController::class, 'blog']);
 Route::get('/admin', [PageController::class, 'admin']);
 
+//TESTIMONIALS
 Route::prefix('admin/opinie')->name('admin.testimonial.')->group(function () {
     Route::get('/', [TestimonialController::class, 'index'])->name('index');
     Route::get('/dodaj', [TestimonialController::class, 'create'])->name('create');
     Route::post('/dodaj', [TestimonialController::class, 'store'])->name('store');
     Route::get('/edytuj/{testimonial}', [TestimonialController::class, 'edit'])->name('edit');
-    Route::put('/edytuj/{testimonial}', [TestimonialController::class,'update'])->name('update');
-    Route::delete('/usun/{testimonial}', [TestimonialController::class,'destroy'])->name('delete');
+    Route::put('/edytuj/{testimonial}', [TestimonialController::class, 'update'])->name('update');
+    Route::delete('/usun/{testimonial}', [TestimonialController::class, 'destroy'])->name('delete');
 });
 
-//  Route::prefix('admin/komentarze')->name('admin.comment.')->group(function () {
-//         Route::get('/', [CommentController::class,'index'])->name('index');
-//         Route::get('/dodaj', [CommentController::class,'create'])->name('create');
-//         Route::post('/dodaj', [CommentController::class,'store'])->name('store');
-//         Route::get('/edytuj/{comment}', [CommentController::class,'edit'])->name('edit');
-//         Route::put('/edytuj/{comment}', [CommentController::class,'update'])->name('update');
-//         Route::delete('/usun/{comment}', [CommentController::class,'destroy'])->name('delete');
-//     });
+//TOOLS
+Route::prefix('admin/narzedzia')->name('admin.tool.')->group(function () {
+    Route::get('/', [ToolController::class, 'index'])->name('index');
+    Route::get('/dodaj', [ToolController::class, 'create'])->name('create');
+    Route::post('/dodaj', [ToolController::class, 'store'])->name('store');
+    Route::get('/edytuj/{tool}', [ToolController::class, 'edit'])->name('edit');
+    Route::put('/edytuj/{tool}', [ToolController::class, 'update'])->name('update');
+    Route::delete('/usun/{tool}', [ToolController::class, 'destroy'])->name('delete');
+});
