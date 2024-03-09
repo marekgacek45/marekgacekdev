@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryProject;
 use App\Models\Tool;
 use Inertia\Inertia;
 use App\Models\Testimonial;
@@ -41,16 +42,8 @@ $tools = Tool::all();
     public function portfolio()
     {
 
-$categories=[
-    [
-    'id'=>'1',
-    'name'=>'test'
-],
-    [
-    'id'=>'2',
-    'name'=>'test'
-],
-];
+$categories= CategoryProject::all();
+  
 $projects = [
     [
         'id'=>'1',
