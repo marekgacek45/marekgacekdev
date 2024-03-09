@@ -54,34 +54,42 @@ Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio'
 Route::get('/kontakt', [PageController::class, 'contact'])->name('contact');
 Route::post('/kontakt', [FormController::class, 'contact'])->name('contact.form');
 Route::get('/blog', [PageController::class, 'blog']);
-Route::get('/admin', [PageController::class, 'admin']);
 
-//TESTIMONIALS
-Route::prefix('admin/opinie')->name('admin.testimonial.')->group(function () {
-    Route::get('/', [TestimonialController::class, 'index'])->name('index');
-    Route::get('/dodaj', [TestimonialController::class, 'create'])->name('create');
-    Route::post('/dodaj', [TestimonialController::class, 'store'])->name('store');
-    Route::get('/edytuj/{testimonial}', [TestimonialController::class, 'edit'])->name('edit');
-    Route::put('/edytuj/{testimonial}', [TestimonialController::class, 'update'])->name('update');
-    Route::delete('/usun/{testimonial}', [TestimonialController::class, 'destroy'])->name('delete');
-});
 
-//TOOLS
-Route::prefix('admin/narzedzia')->name('admin.tool.')->group(function () {
-    Route::get('/', [ToolController::class, 'index'])->name('index');
-    Route::get('/dodaj', [ToolController::class, 'create'])->name('create');
-    Route::post('/dodaj', [ToolController::class, 'store'])->name('store');
-    Route::get('/edytuj/{tool}', [ToolController::class, 'edit'])->name('edit');
-    Route::put('/edytuj/{tool}', [ToolController::class, 'update'])->name('update');
-    Route::delete('/usun/{tool}', [ToolController::class, 'destroy'])->name('delete');
-});
 
-//CATEGORY PROJECTS
-Route::prefix('admin/kategorie_projektow')->name('admin.category_project.')->group(function () {
-    Route::get('/', [CategoryProjectController::class, 'index'])->name('index');
-    Route::get('/dodaj', [CategoryProjectController::class, 'create'])->name('create');
-    Route::post('/dodaj', [CategoryProjectController::class, 'store'])->name('store');
-    Route::get('/edytuj/{categoryProject}', [CategoryProjectController::class, 'edit'])->name('edit');
-    Route::put('/edytuj/{categoryProject}', [CategoryProjectController::class, 'update'])->name('update');
-    Route::delete('/usun/{categoryProject}', [CategoryProjectController::class, 'destroy'])->name('delete');
+
+Route::middleware(['admin'])->group(function () {
+
+    //ADMIN DASHBOARD
+    Route::get('/admin', [PageController::class, 'admin']);
+
+    //TESTIMONIALS
+    Route::prefix('admin/opinie')->name('admin.testimonial.')->group(function () {
+        Route::get('/', [TestimonialController::class, 'index'])->name('index');
+        Route::get('/dodaj', [TestimonialController::class, 'create'])->name('create');
+        Route::post('/dodaj', [TestimonialController::class, 'store'])->name('store');
+        Route::get('/edytuj/{testimonial}', [TestimonialController::class, 'edit'])->name('edit');
+        Route::put('/edytuj/{testimonial}', [TestimonialController::class, 'update'])->name('update');
+        Route::delete('/usun/{testimonial}', [TestimonialController::class, 'destroy'])->name('delete');
+    });
+
+    //TOOLS
+    Route::prefix('admin/narzedzia')->name('admin.tool.')->group(function () {
+        Route::get('/', [ToolController::class, 'index'])->name('index');
+        Route::get('/dodaj', [ToolController::class, 'create'])->name('create');
+        Route::post('/dodaj', [ToolController::class, 'store'])->name('store');
+        Route::get('/edytuj/{tool}', [ToolController::class, 'edit'])->name('edit');
+        Route::put('/edytuj/{tool}', [ToolController::class, 'update'])->name('update');
+        Route::delete('/usun/{tool}', [ToolController::class, 'destroy'])->name('delete');
+    });
+
+    //CATEGORY PROJECTS
+    Route::prefix('admin/kategorie_projektow')->name('admin.category_project.')->group(function () {
+        Route::get('/', [CategoryProjectController::class, 'index'])->name('index');
+        Route::get('/dodaj', [CategoryProjectController::class, 'create'])->name('create');
+        Route::post('/dodaj', [CategoryProjectController::class, 'store'])->name('store');
+        Route::get('/edytuj/{categoryProject}', [CategoryProjectController::class, 'edit'])->name('edit');
+        Route::put('/edytuj/{categoryProject}', [CategoryProjectController::class, 'update'])->name('update');
+        Route::delete('/usun/{categoryProject}', [CategoryProjectController::class, 'destroy'])->name('delete');
+    });
 });
