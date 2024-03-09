@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Testimonial;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 
@@ -10,22 +11,9 @@ class PageController extends Controller
     public function home()
     {
 
-        $comments = [
-            [
-                'id' => 1,
-                'logo' => '',
-                'link' => 'https://marekgacekdev.pl',
-                'body' => 'adsds',
-            ],
-            [
-                'id' => 2,
-                'logo' => '',
-                'link' => 'https://marekgacekdev.pl',
-                'body' => 'sdasdsadasdasdasdasdasddsadasdasd',
-            ],
-        ];
+       $testimonials = Testimonial::all();
 
-        return Inertia('Home/Index', ['comments' => $comments]);
+        return Inertia('Home/Index', ['testimonials' => $testimonials]);
     }
 
     public function about()
@@ -71,4 +59,11 @@ $projects = [
 
         return Inertia('Portfolio/Index',['categories'=>$categories,'projects'=>$projects]);
     }
+
+
+    public function admin()
+    {
+        return Inertia('Admin/Dashboard');
+    }
+
 }

@@ -16,10 +16,10 @@
                 </a>
                 <div
                     class="flex justify-center items-center font-textArch text-xl min-h-[140px] md:min-h-[175px] 2xl:min-h-[145px] md:px-12 lg:px-0"
-                    key="currentBody"
+                    key="currentContent"
                 >
                     <p>
-                        {{ currentBody }}
+                        {{ currentContent }}
                     </p>
                 </div>
             </div>
@@ -57,44 +57,46 @@ import { ref, computed, onMounted, onUnmounted } from "vue";
 import OldSchoolCard from "../OldSchoolCard.vue";
 
 const props = defineProps({
-    comments: Array,
+    testimonials: Array,
 });
 
-console.log(props.comments);
 
-const comments = ref([]);
+
+const testimonials = ref([]);
 const currentIndex = ref(0);
 
 const currentLogo = computed(() => {
-    if (comments.value.length > 0) {
-        return comments.value[currentIndex.value].logo;
+    if (testimonials.value.length > 0) {
+        const path = 'storage/' + testimonials.value[currentIndex.value].logo
+       
+        return path
     }
     return null;
 });
 
 const currentLink = computed(() => {
-    if (comments.value.length > 0) {
-        return comments.value[currentIndex.value].link;
+    if (testimonials.value.length > 0) {
+        return testimonials.value[currentIndex.value].link;
     }
     return null;
 });
 
-const currentBody = computed(() => {
-    if (comments.value.length > 0) {
-        return comments.value[currentIndex.value].body;
+const currentContent = computed(() => {
+    if (testimonials.value.length > 0) {
+        return testimonials.value[currentIndex.value].content;
     }
     return null;
 });
 
 const nextComment = () => {
-    currentIndex.value = (currentIndex.value + 1) % comments.value.length;
+    currentIndex.value = (currentIndex.value + 1) % testimonials.value.length;
     resetInterval();
 };
 
 const previousComment = () => {
     currentIndex.value =
-        (currentIndex.value - 1 + comments.value.length) %
-        comments.value.length;
+        (currentIndex.value - 1 + testimonials.value.length) %
+        testimonials.value.length;
     resetInterval();
 };
 
@@ -106,7 +108,7 @@ const resetInterval = () => {
 };
 
 onMounted(() => {
-    comments.value = props.comments;
+    testimonials.value = props.testimonials;
     resetInterval();
 });
 

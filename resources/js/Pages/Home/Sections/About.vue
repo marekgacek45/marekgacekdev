@@ -23,7 +23,7 @@
                     </h3>
                 </div>
                 <div class="md:px-12 lg:px-0">
-                    <TestimonialsCard :comments="comments"/>
+                    <TestimonialsCard :testimonials="testimonials"/>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@ import TestimonialsCard from "@/Components/Home/TestimonialsCard.vue";
 
 
 const props = defineProps({
-    comments:Array
+   testimonials:Array
 })
 
 

@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +48,26 @@ require __DIR__ . '/auth.php';
 Route::get('/', [PageController::class, 'home']);
 Route::get('/o_mnie', [PageController::class, 'about']);
 Route::get('/uslugi', [PageController::class, 'services']);
-Route::get('/portfolio',[PageController::class,'portfolio'])->name('portfolio');
-Route::get('/kontakt',[PageController::class,'contact'])->name('contact');
-Route::post('/kontakt',[FormController::class,'contact'])->name('contact.form');
+Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
+Route::get('/kontakt', [PageController::class, 'contact'])->name('contact');
+Route::post('/kontakt', [FormController::class, 'contact'])->name('contact.form');
 Route::get('/blog', [PageController::class, 'blog']);
+Route::get('/admin', [PageController::class, 'admin']);
+
+Route::prefix('admin/opinie')->name('admin.testimonial.')->group(function () {
+    Route::get('/', [TestimonialController::class, 'index'])->name('index');
+    Route::get('/dodaj', [TestimonialController::class, 'create'])->name('create');
+    Route::post('/dodaj', [TestimonialController::class, 'store'])->name('store');
+    Route::get('/edytuj/{testimonial}', [TestimonialController::class, 'edit'])->name('edit');
+    Route::put('/edytuj/{testimonial}', [TestimonialController::class,'update'])->name('update');
+    Route::delete('/usun/{testimonial}', [TestimonialController::class,'destroy'])->name('delete');
+});
+
+//  Route::prefix('admin/komentarze')->name('admin.comment.')->group(function () {
+//         Route::get('/', [CommentController::class,'index'])->name('index');
+//         Route::get('/dodaj', [CommentController::class,'create'])->name('create');
+//         Route::post('/dodaj', [CommentController::class,'store'])->name('store');
+//         Route::get('/edytuj/{comment}', [CommentController::class,'edit'])->name('edit');
+//         Route::put('/edytuj/{comment}', [CommentController::class,'update'])->name('update');
+//         Route::delete('/usun/{comment}', [CommentController::class,'destroy'])->name('delete');
+//     });
