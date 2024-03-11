@@ -58,6 +58,13 @@
         form.errors.image
     }}</Error>
                             </Field>
+
+
+                            <Field>
+                                <Label for="name" id="name">Narzędzia</Label>
+<ul class="flex gap-6"><li class="mt-6" v-for="tool in tools" :key="tool.id">  <input type="checkbox" v-model="form.tool_id" :value="tool.id"/> <label for="">{{ tool.name }}</label></li></ul>
+                            </Field>
+
                             <Field>
                                 <TextArea
                                     id="description"
@@ -102,6 +109,7 @@ import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
 defineProps({
     form: Object,
     errors: Object,
+    tools:Object
 });
 
 // const fileChange = (e) => {
@@ -113,11 +121,12 @@ const form = useForm({
     site_link: "",
     youtube_link: "",
     image:null,
-    description:""
+    description:"",
+    tool_id:[],
 });
 
 const submit = () => {
-   
+   console.log(form);
     form.post(route("admin.project.store"), {
         preserveScroll: true,
         onSuccess: () => {

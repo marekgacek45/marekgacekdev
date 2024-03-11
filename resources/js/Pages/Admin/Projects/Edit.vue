@@ -62,6 +62,17 @@
                                 }}</Error>
                             </div>
                         </Field>
+
+                        <Field>
+    <Label for="name" id="name">Narzędzia</Label>
+    <ul class="flex gap-6">
+        <li class="mt-6" v-for="tool in tools" :key="tool.id">
+            <input type="checkbox" v-model="form.tools" :value="tool.id"/>
+            <label for="">{{ tool.name }}</label>
+        </li>
+    </ul>
+</Field>
+
                         <Field>
                                 <TextArea
                                     id="description"
@@ -108,6 +119,7 @@ const props = defineProps({
     form: Object,
     errors: Object,
     project: Object,
+    tools:Object
 });
 
 const form = useForm({
@@ -116,6 +128,7 @@ const form = useForm({
     youtube_link: props.project.youtube_link,
     image:props.project.image,
     description:props.project.description,
+    tools: props.project.tools.map(tool => tool.id),
 });
 
 // const fileChange = (e) => {
@@ -140,6 +153,7 @@ const submit = () => {
     youtube_link: form.youtube_link,
     image:form.image,
     description:form.description,
+    tool_id:form.tools
     });
 };
 </script>

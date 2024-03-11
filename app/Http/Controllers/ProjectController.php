@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryProject;
 use App\Models\Project;
+use App\Models\Tool;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
@@ -19,7 +21,10 @@ class ProjectController extends Controller
 
     public function create()
     {
-        return Inertia('Admin/Projects/Create');
+
+$tools = Tool::all();
+
+        return Inertia('Admin/Projects/Create',['tools'=>$tools]);
     }
 
     public function store(Request $request)
@@ -30,7 +35,7 @@ class ProjectController extends Controller
         $image = $request->file('image')->store('projects', 'public');
         // $path = '/storage/' . $logo;
 
-        Project::create([
+        $project = Project::create([
             'title' => $request->title,
             'site_link' => $request->site_link,
             'youtube_link' => $request->youtube_link,
@@ -39,14 +44,18 @@ class ProjectController extends Controller
         ]);
 
 
+        $project->tools()->sync($request->tool_id);
+
+
         return Redirect::route('admin.project.index');
     }
     public function edit(Project $project)
     {
 
+        $project->load('tools');
 
 
-        return Inertia('Admin/Projects/Edit', ['project' => $project]);
+        return Inertia('Admin/Projects/Edit', ['project' => $project,'tools' => Tool::all()]);
     }
 
     public function update(Request $request, Project $project)
@@ -67,6 +76,8 @@ class ProjectController extends Controller
             'image' => $image,
             'description' => $request->description,
         ]);
+
+        $project->tools()->sync($request->tool_id);
 
 
         return Redirect::route('admin.project.index');
