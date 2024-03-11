@@ -7,6 +7,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\CategoryProjectController;
 
@@ -91,5 +92,15 @@ Route::middleware(['admin'])->group(function () {
         Route::get('/edytuj/{categoryProject}', [CategoryProjectController::class, 'edit'])->name('edit');
         Route::put('/edytuj/{categoryProject}', [CategoryProjectController::class, 'update'])->name('update');
         Route::delete('/usun/{categoryProject}', [CategoryProjectController::class, 'destroy'])->name('delete');
+    });
+
+    //PROJECTS
+    Route::prefix('admin/projekty')->name('admin.project.')->group(function () {
+        Route::get('/', [ProjectController::class, 'index'])->name('index');
+        Route::get('/dodaj', [ProjectController::class, 'create'])->name('create');
+        Route::post('/dodaj', [ProjectController::class, 'store'])->name('store');
+        Route::get('/edytuj/{project}', [ProjectController::class, 'edit'])->name('edit');
+        Route::put('/edytuj/{project}', [ProjectController::class, 'update'])->name('update');
+        Route::delete('/usun/{project}', [ProjectController::class, 'destroy'])->name('delete');
     });
 });
