@@ -1,8 +1,8 @@
 <template>
     <div>
-        <Head title="Edytuj Kategorię Projektu"> </Head>
+        <Head title="Edytuj Kategorię "> </Head>
         <AdminLayout>
-            <OldSchoolCard title="Edytuj Kategorię Projektu" class="w-1/2 mx-auto">
+            <OldSchoolCard title="Edytuj Kategorię " class="w-1/2 mx-auto">
                 <div class="bg-bgLight-200 py-6">
                     <form
                         @submit.prevent="submit"
@@ -56,11 +56,11 @@ import { router } from "@inertiajs/vue3";
 const props = defineProps({
     form: Object,
     errors: Object,
-    categoryProject: Object,
+    category: Object,
 });
 
 const form = useForm({
-    name: props.categoryProject.name,
+    name: props.category.name,
 });
 
 // const fileChange = (e) => {
@@ -69,7 +69,7 @@ const form = useForm({
 
 
 const submit = () => {
-    form.put(route("admin.category_project.update", props.categoryProject.id), {
+    form.put(route("admin.category.update", props.category.id), {
         preserveScroll: true,
         onSuccess: () => {},
     });

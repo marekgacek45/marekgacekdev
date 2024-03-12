@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Head title="Kategorie Projektów"> </Head>
+        <Head title="Kategorie "> </Head>
         <AdminLayout>
             <div class="relative overflow-x-auto">
                 <table
@@ -9,7 +9,7 @@
                     <caption
                         class="p-3 font-heading text-3xl text-left rtl:text-right text-fontLight bg-bgDark-400 uppercase"
                     >
-                        Kategorie Projektów
+                        Kategorie 
                     </caption>
                     <thead class="text-sm text-fontDark uppercase">
                         <tr>
@@ -33,7 +33,7 @@
                     </thead>
                     <tbody>
                         <tr
-                            v-for="(category, index) in categoriesProjects"
+                            v-for="(category, index) in categories"
                             :key="category.id"
                             class="bg-white dark:bg-gray-800"
                         >
@@ -54,7 +54,7 @@
                             </td>
                             <td class="px-6 py-4 flex gap-4 items-center">
                                 <Link
-                                :href="route('admin.category_project.edit', category.id)"
+                                :href="route('admin.category.edit', category.id)"
                                    
                                 >
                                 <img src="/assets/icons/admin/edit.svg" alt="" class="w-6 hover:animate-shake">
@@ -90,7 +90,7 @@
                                                         method="DELETE"
                                                         :href="
                                                             route(
-                                                                'admin.category_project.delete',
+                                                                'admin.category.delete',
                                                                 category.id
                                                             )
                                                         "
@@ -111,7 +111,7 @@
             <div>
                 
                 <Link
-                    :href="route('admin.category_project.create')"
+                    :href="route('admin.category.create')"
                     class="absolute bottom-6"
                     ><img
                         src="/assets/icons/admin/plus.svg"
@@ -130,16 +130,16 @@ import Modal from "@/Components/Base/Modal.vue";
 import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
 
 defineProps({
-    categoriesProjects: Object,
+    categories: Object,
 });
 
 import { ref } from "vue";
 
 let isModalOpen = ref(false);
 
-const openModal = (categoryProject) => {
+const openModal = (category) => {
     isModalOpen.value = true;
-    categoryProject.value = categoryProject;
+    category.value = category;
 };
 
 const closeModal = () => {

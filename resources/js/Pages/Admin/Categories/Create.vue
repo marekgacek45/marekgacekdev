@@ -1,8 +1,8 @@
 <template>
     <div>
-        <Head title="Dodaj Kategorię Projektów"> </Head>
+        <Head title="Dodaj Kategorię"> </Head>
         <AdminLayout>
-            <OldSchoolCard title="Dodaj Kategorię Projektów" class="w-1/2 mx-auto">
+            <OldSchoolCard title="Dodaj Kategorię" class="w-1/2 mx-auto">
                 <div class="bg-bgLight-200 py-6">
                     <form
                         @submit.prevent="submit"
@@ -69,7 +69,7 @@ const form = useForm({
 
 const submit = () => {
    
-    form.post(route("admin.category_project.store"), {
+    form.post(route("admin.category.store"), {
         preserveScroll: true,
         onSuccess: () => {
           

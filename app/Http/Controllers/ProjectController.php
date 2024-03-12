@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoryProject;
-use App\Models\Project;
 use App\Models\Tool;
+use App\Models\Project;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\CategoryProject;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
@@ -23,8 +24,9 @@ class ProjectController extends Controller
     {
 
 $tools = Tool::all();
+$categories = Category::all();
 
-        return Inertia('Admin/Projects/Create',['tools'=>$tools]);
+        return Inertia('Admin/Projects/Create',['tools'=>$tools,'categories'=>$categories]);
     }
 
     public function store(Request $request)
@@ -45,6 +47,7 @@ $tools = Tool::all();
 
 
         $project->tools()->sync($request->tool_id);
+        $project->categories()->sync($request->category_id);
 
 
         return Redirect::route('admin.project.index');
@@ -53,9 +56,10 @@ $tools = Tool::all();
     {
 
         $project->load('tools');
+        $project->load('categories');
 
 
-        return Inertia('Admin/Projects/Edit', ['project' => $project,'tools' => Tool::all()]);
+        return Inertia('Admin/Projects/Edit', ['project' => $project,'tools' => Tool::all(),'categories'=>Category::all()]);
     }
 
     public function update(Request $request, Project $project)
@@ -78,6 +82,7 @@ $tools = Tool::all();
         ]);
 
         $project->tools()->sync($request->tool_id);
+        $project->categories()->sync($request->category_id);
 
 
         return Redirect::route('admin.project.index');

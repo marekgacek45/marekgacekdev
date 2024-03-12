@@ -8,8 +8,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TestimonialController;
-use App\Http\Controllers\CategoryProjectController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -85,13 +86,13 @@ Route::middleware(['admin'])->group(function () {
     });
 
     //CATEGORY PROJECTS
-    Route::prefix('admin/kategorie_projektow')->name('admin.category_project.')->group(function () {
-        Route::get('/', [CategoryProjectController::class, 'index'])->name('index');
-        Route::get('/dodaj', [CategoryProjectController::class, 'create'])->name('create');
-        Route::post('/dodaj', [CategoryProjectController::class, 'store'])->name('store');
-        Route::get('/edytuj/{categoryProject}', [CategoryProjectController::class, 'edit'])->name('edit');
-        Route::put('/edytuj/{categoryProject}', [CategoryProjectController::class, 'update'])->name('update');
-        Route::delete('/usun/{categoryProject}', [CategoryProjectController::class, 'destroy'])->name('delete');
+    Route::prefix('admin/kategorie')->name('admin.category.')->group(function () {
+        Route::get('/', [CategoryController::class, 'index'])->name('index');
+        Route::get('/dodaj', [CategoryController::class, 'create'])->name('create');
+        Route::post('/dodaj', [CategoryController::class, 'store'])->name('store');
+        Route::get('/edytuj/{category}', [CategoryController::class, 'edit'])->name('edit');
+        Route::put('/edytuj/{category}', [CategoryController::class, 'update'])->name('update');
+        Route::delete('/usun/{category}', [CategoryController::class, 'destroy'])->name('delete');
     });
 
     //PROJECTS

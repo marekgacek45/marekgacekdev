@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoryProject;
 use App\Models\Tool;
 use Inertia\Inertia;
+use App\Models\Category;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use App\Models\CategoryProject;
 
 class PageController extends Controller
 {
@@ -42,7 +43,7 @@ $tools = Tool::all();
     public function portfolio()
     {
 
-$categories= CategoryProject::all();
+$categories= Category::all();
   
 $projects = [
     [

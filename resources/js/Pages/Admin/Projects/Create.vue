@@ -64,6 +64,10 @@
                                 <Label for="name" id="name">Narzędzia</Label>
 <ul class="flex gap-6"><li class="mt-6" v-for="tool in tools" :key="tool.id">  <input type="checkbox" v-model="form.tool_id" :value="tool.id"/> <label for="">{{ tool.name }}</label></li></ul>
                             </Field>
+                            <Field>
+                                <Label for="name" id="name">Kategorie</Label>
+<ul class="flex gap-6"><li class="mt-6" v-for="category in categories" :key="category.id">  <input type="checkbox" v-model="form.category_id" :value="category.id"/> <label for="">{{ category.name }}</label></li></ul>
+                            </Field>
 
                             <Field>
                                 <TextArea
@@ -109,7 +113,8 @@ import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
 defineProps({
     form: Object,
     errors: Object,
-    tools:Object
+    tools:Object,
+    categories:Object
 });
 
 // const fileChange = (e) => {
@@ -123,6 +128,7 @@ const form = useForm({
     image:null,
     description:"",
     tool_id:[],
+    category_id:[],
 });
 
 const submit = () => {

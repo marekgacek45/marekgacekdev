@@ -72,6 +72,15 @@
         </li>
     </ul>
 </Field>
+                        <Field>
+    <Label for="name" id="name">Kategorie</Label>
+    <ul class="flex gap-6">
+        <li class="mt-6" v-for="category in categories" :key="category.id">
+            <input type="checkbox" v-model="form.categories" :value="category.id"/>
+            <label for="">{{ category.name }}</label>
+        </li>
+    </ul>
+</Field>
 
                         <Field>
                                 <TextArea
@@ -119,7 +128,8 @@ const props = defineProps({
     form: Object,
     errors: Object,
     project: Object,
-    tools:Object
+    tools:Object,
+    categories:Object
 });
 
 const form = useForm({
@@ -129,6 +139,7 @@ const form = useForm({
     image:props.project.image,
     description:props.project.description,
     tools: props.project.tools.map(tool => tool.id),
+    categories: props.project.categories.map(category => category.id),
 });
 
 // const fileChange = (e) => {
@@ -153,7 +164,8 @@ const submit = () => {
     youtube_link: form.youtube_link,
     image:form.image,
     description:form.description,
-    tool_id:form.tools
+    tool_id:form.tools,
+    category_id:form.categories
     });
 };
 </script>
