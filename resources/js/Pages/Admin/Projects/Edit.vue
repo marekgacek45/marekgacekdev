@@ -83,12 +83,19 @@
 </Field>
 
                         <Field>
-                                <TextArea
+                                <!-- <TextArea
                                     id="description"
                                     name="description"
                                     v-model="form.description"
                                     required
-                                ></TextArea>
+                                ></TextArea> -->
+                                <QuillEditor
+                                theme="snow"
+                                toolbar="full"
+                                contentType="html"
+                                v-model:content="form.description"
+                               
+                            />
                                 <Label for="description" id="description">Treść</Label>
 
                                 <Error v-if="form.errors.description">{{
@@ -123,6 +130,9 @@ import AdminLayout from "@/Layouts/AdminLayout.vue";
 import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
 
 import { router } from "@inertiajs/vue3";
+
+import { QuillEditor } from "@vueup/vue-quill";
+import "@vueup/vue-quill/dist/vue-quill.snow.css";
 
 const props = defineProps({
     form: Object,
