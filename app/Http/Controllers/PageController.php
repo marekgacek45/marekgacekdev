@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tool;
 use Inertia\Inertia;
+use App\Models\Project;
 use App\Models\Category;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -45,16 +46,7 @@ $tools = Tool::all();
 
 $categories= Category::all();
   
-$projects = [
-    [
-        'id'=>'1',
-        'title'=>'test',
-        'site_link'=>'test.pl',
-        'image'=>'',
-        'youtube_link'=>'',
-        'description'=>'lorem ipsum'
-    ],
-];
+$projects = Project::with('categories','tools')->get();
 
 
         return Inertia('Portfolio/Index',['categories'=>$categories,'projects'=>$projects]);

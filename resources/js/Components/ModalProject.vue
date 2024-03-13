@@ -2,7 +2,7 @@
     <transition name="modal-fade">
         <div
             v-if="isModalOpen"
-            class="fixed inset-0 flex justify-center items-center px-6 sm:px-12 2xl:px-0 pb-12 pt-32 lg:pt-0 bg-bgDark-400 bg-opacity-50 "
+            class="fixed inset-0 flex justify-center items-center px-6 sm:px-12 2xl:px-0 pb-12 pt-32 lg:pt-0 bg-bgDark-400 bg-opacity-50"
             :class="classes"
             @click="closeModal"
         >
@@ -44,12 +44,9 @@
                                 {{ activeProject.title }}
                             </a>
 
-                            <p v-html="activeProject.description">
-                               
-                            </p>
+                            <p v-html="activeProject.description"></p>
                             <!-- <p>{{ activeProject.description }} </p> -->
 
-                          
                             <div>
                                 <span class="font-heading text-2xl"
                                     >Wykorzystane technologie</span
@@ -57,9 +54,11 @@
                                 <div
                                     class="flex justify-start items-center gap-3 mt-2"
                                 >
-                                    <img v-for="technology in activeProject.technologies" :key="technology.id"
-                                        :src="technology.logo"
-                                        :alt="technology.name"
+                                    <img
+                                        v-for="tool in activeProject.tools"
+                                        :key="tool.id"
+                                        :src="'/storage/' + tool.logo"
+                                        :alt="tool.name"
                                         class="w-10"
                                     />
                                 </div>
@@ -73,10 +72,7 @@
 </template>
 
 <script setup>
-
 import OldSchoolCard from "./OldSchoolCard.vue";
-
-
 
 const props = defineProps({
     activeProject: Object,
@@ -89,8 +85,6 @@ const emit = defineEmits(["update:isModalOpen"]);
 const closeModal = () => {
     emit("update:isModalOpen", false);
 };
-
-
 </script>
 
 <style scoped>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -103,5 +104,15 @@ Route::middleware(['admin'])->group(function () {
         Route::get('/edytuj/{project}', [ProjectController::class, 'edit'])->name('edit');
         Route::put('/edytuj/{project}', [ProjectController::class, 'update'])->name('update');
         Route::delete('/usun/{project}', [ProjectController::class, 'destroy'])->name('delete');
+    });
+    //POSTS
+    Route::prefix('admin/posty')->name('admin.post.')->group(function () {
+        Route::get('/', [PostController::class, 'index'])->name('index');
+        Route::get('/dodaj', [PostController::class, 'create'])->name('create');
+        Route::post('/dodaj', [PostController::class, 'store'])->name('store');
+        Route::get('/edytuj/{post}', [PostController::class, 'edit'])->name('edit');
+        Route::get('/{post}', [PostController::class, 'show'])->name('show');
+        // Route::put('/edytuj/{project}', [ProjectController::class, 'update'])->name('update');
+        // Route::delete('/usun/{project}', [ProjectController::class, 'destroy'])->name('delete');
     });
 });

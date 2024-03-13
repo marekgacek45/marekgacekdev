@@ -5,7 +5,7 @@
         <div
             class="flex flex-col flex-start items-center h-full px-6 sm:px-12 md:px-24 lg:px-0 py-24 gap-12"
         >
-        <!--BUTTONS-->
+            <!--BUTTONS-->
             <div class="flex flex-wrap justify-center items-center gap-8">
                 <button
                     class="btn box-shadow"
@@ -32,7 +32,7 @@
                     {{ category.name }}
                 </button>
             </div>
-<!--PROJECTS-->
+            <!--PROJECTS-->
             <transition-group
                 name="list"
                 tag="div"
@@ -47,7 +47,7 @@
                     @click="openModal(project)"
                 >
                     <img
-                        :src="project.image"
+                        :src="'/storage/' + project.image"
                         alt="miniaturka projektu"
                         class="max-h-[300px] w-full h-full object-cover"
                     />
@@ -60,15 +60,13 @@
         </div>
         <!--MODAL-->
         <v-if isModalOpen>
-        <ModalProject
-            :activeProject="activeProject"
-            :isModalOpen="isModalOpen"
-            @update:isModalOpen="isModalOpen = $event"
-        />
-    </v-if>
+            <ModalProject
+                :activeProject="activeProject"
+                :isModalOpen="isModalOpen"
+                @update:isModalOpen="isModalOpen = $event"
+            />
+        </v-if>
     </section>
-
-   
 </template>
 
 <script setup>
@@ -131,6 +129,4 @@ const openModal = (project) => {
     opacity: 1;
     transform: rotate(360deg) scale(1);
 }
-
-
 </style>
