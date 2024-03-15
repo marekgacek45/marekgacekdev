@@ -1,20 +1,18 @@
 <template>
-    <header
-        class="section lg:h-[calc(100vh-71px)]  mt-[71px] bg-ownYellow-400"
-    >
+    <header class="section lg:h-[calc(100vh-71px)] mt-[71px] bg-ownYellow-400">
         <!-- CONTAINER---->
-        <div
-            class="wrapper"
-        >
+        <div class="wrapper">
             <!-- TEXT---->
             <div
                 class="flex flex-col justify-center gap-6 lg:w-1/2 lg:mr-3 py-12"
             >
-                <h1 class="text-7xl md:text-8xl xl:text-9xl font-heading">
+                <h1
+                    class="text-7xl md:text-8xl xl:text-9xl font-heading " v-motion-slide-visible-left
+                >
                     Stwórz stronę swoich marzeń
                 </h1>
-                <h2
-                    class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed"
+                <h2 
+                    class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed "
                 >
                     Projektuję, tworzę i rozwijam innowacyjne strony internetowe
                     które zaprezentują Twoją markę, zachwycą Twoich klientów i
@@ -22,25 +20,26 @@
                     organizacji
                 </h2>
                 <div>
-                    <Link href="/"><primary-button aria-label="Portfolio">Portfolio</primary-button></Link>
-                    <!-- <Link href="route('portfolio')"><primary-button aria-label="Portfolio">Portfolio</primary-button></Link> -->
+                    <Link href="route('portfolio')"
+                        ><primary-button aria-label="Portfolio"
+                            >Portfolio</primary-button
+                        ></Link
+                    >
                 </div>
             </div>
             <!-- IMAGE---->
             <div
-                class="flex justify-center items-center h-96 lg:h-auto mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4  2xl:p-10"
+                class="flex justify-center items-center h-96 lg:h-auto mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 2xl:p-10"
             >
                 <img
                     src="/assets/images/home/header--big.webp"
                     alt=""
                     class="hidden md:block h-full object-cover box-shadow"
-                    
                 />
                 <img
                     src="/assets/images/home/header--small.webp"
                     alt=""
                     class="md:hidden h-full object-cover box-shadow"
-                   
                 />
             </div>
         </div>

@@ -1,11 +1,15 @@
 import './bootstrap';
-import '../css/app.css';
+import '../scss/app.scss';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp,Link,Head } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { VueReCaptcha,useReCaptcha } from 'vue-recaptcha-v3'
+import { MotionPlugin } from '@vueuse/motion'
+
+
+
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -18,6 +22,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .use(VueReCaptcha, { siteKey: captcheKey,loaderOptions: {useRecaptchaNet: true}})
+            .use(MotionPlugin)
             .component("Link",Link,)
             .component("Head",Head)
             .mount(el);

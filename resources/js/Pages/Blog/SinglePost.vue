@@ -21,6 +21,10 @@ const props = defineProps({
     <Layout>
         <div class="mt-96">
 
+            <img :src="'/storage/' + post.thumbnail">
+
+
+
             <div v-html="post.content"></div>
         </div>
         

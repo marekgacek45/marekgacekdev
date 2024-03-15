@@ -30,17 +30,19 @@ $categories = Category::all();
 
 
 
-        // $image = $request->file('image')->store('projects', 'public');
+        $thumbnail = $request->file('thumbnail')->store('post', 'public');
       
 
         $post = Post::create([
            
+            'title' => $request->title,
+            'thumbnail' => $thumbnail,
             'content' => $request->content,
         ]);
 
 
-        // $project->tools()->sync($request->tool_id);
-        // $project->categories()->sync($request->category_id);
+       
+        $post->categories()->sync($request->category_id);
 
 
         return Redirect::route('admin.post.index');
