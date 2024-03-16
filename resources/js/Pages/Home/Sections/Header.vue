@@ -1,3 +1,10 @@
+<script setup>
+import { Vue3Marquee } from "vue3-marquee";
+import { useGlobalMotion } from "@/motionSetup.js";
+
+const { textRight, textLeft } = useGlobalMotion();
+</script>
+
 <template>
     <header class="section lg:h-[calc(100vh-71px)] mt-[71px] bg-ownYellow-400">
         <!-- CONTAINER---->
@@ -7,12 +14,14 @@
                 class="flex flex-col justify-center gap-6 lg:w-1/2 lg:mr-3 py-12"
             >
                 <h1
-                    class="text-7xl md:text-8xl xl:text-9xl font-heading " v-motion-slide-visible-left
+                    ref="textRight"
+                    class="text-7xl md:text-8xl xl:text-9xl font-heading"
                 >
                     Stwórz stronę swoich marzeń
                 </h1>
-                <h2 
-                    class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed "
+                <h2
+                    ref="textLeft"
+                    class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed"
                 >
                     Projektuję, tworzę i rozwijam innowacyjne strony internetowe
                     które zaprezentują Twoją markę, zachwycą Twoich klientów i
@@ -33,13 +42,17 @@
             >
                 <img
                     src="/assets/images/home/header--big.webp"
-                    alt=""
+                    alt="Odkryj wszechświat możliwości online"
                     class="hidden md:block h-full object-cover box-shadow"
+                    width="600"
+                    height="600"
                 />
                 <img
                     src="/assets/images/home/header--small.webp"
-                    alt=""
+                    alt="Odkryj wszechświat możliwości online"
                     class="md:hidden h-full object-cover box-shadow"
+                    width="600"
+                    height="400"
                 />
             </div>
         </div>
@@ -52,19 +65,13 @@
                 class="bg-bgDark-400 overflow-hidden py-1"
             >
                 <p
-                    class="text-6xl sm:text-7xl xl:text-8xl font-heading text-fontLight uppercase"
+                    class="text-6xl sm:text-7xl xl:text-8xl font-heading text-fontLight uppercase mr-2"
                 >
-                    Strony Internetowe • Design • Social Media • Copywriting •
-                    Fotografia • Artykuły Marketingowe • Wizytówki Google •
+                    Strony WWW • Sklepy Internetowe • Design • Social Media •
+                    Copywriting • Fotografia • Artykuły Marketingowe • Wizytówki
+                    Google •
                 </p>
             </Vue3Marquee>
         </div>
     </header>
 </template>
-
-<script setup>
-import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
-import { Vue3Marquee } from "vue3-marquee";
-</script>
-
-<style scoped></style>

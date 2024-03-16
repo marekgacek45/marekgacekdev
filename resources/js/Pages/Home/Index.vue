@@ -9,6 +9,7 @@ import YouTube from "@/Pages/Home/Sections/YouTube.vue";
 const props = defineProps({
     posts: Array,
     testimonials: Array,
+    services:Array,
 });
 </script>
 
@@ -24,9 +25,9 @@ const props = defineProps({
         <Header></Header>
 
         <main>
-            <About :testimonials="testimonials" />
+            <About :testimonials="testimonials" :services="services" />
 
-            <Blog />
+            <Blog :posts="posts"/>
 
             <YouTube></YouTube>
             

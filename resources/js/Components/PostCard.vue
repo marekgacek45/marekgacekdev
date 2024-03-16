@@ -6,7 +6,7 @@
 >
             <div class="h-72 w-full">
                 <img
-                    :src="thumbnail"
+                    :src="'/storage/' + thumbnail"
                     :alt="altText"
                     class="h-full w-full object-cover group-hover:hidden"
                 />

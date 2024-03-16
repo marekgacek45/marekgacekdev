@@ -8,7 +8,7 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { VueReCaptcha,useReCaptcha } from 'vue-recaptcha-v3'
 import { MotionPlugin } from '@vueuse/motion'
 
-
+import PrimaryButton from './Components/Base/PrimaryButton.vue';
 
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
@@ -25,6 +25,7 @@ createInertiaApp({
             .use(MotionPlugin)
             .component("Link",Link,)
             .component("Head",Head)
+            .component('PrimaryButton',PrimaryButton)
             .mount(el);
     },
     
