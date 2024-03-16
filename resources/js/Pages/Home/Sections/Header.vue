@@ -6,7 +6,7 @@ const { textRight, textLeft } = useGlobalMotion();
 </script>
 
 <template>
-    <header class="section lg:h-[calc(100vh-71px)] mt-[71px] bg-ownYellow-400">
+    <header class="section  mt-[71px] bg-ownYellow-400">
         <!-- CONTAINER---->
         <div class="wrapper">
             <!-- TEXT---->
@@ -37,13 +37,13 @@ const { textRight, textLeft } = useGlobalMotion();
                 </div>
             </div>
             <!-- IMAGE---->
-            <div
-                class="flex justify-center items-center h-96 lg:h-auto mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 2xl:p-10"
+            <!-- <div class="flex justify-center items-center h-96 lg:h-auto mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 2xl:p-10 max-h-[1000px]" -->
+              <div  class="flex  flex-col justify-center items-center   mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 2xl:p-10 "
             >
                 <img
                     src="/assets/images/home/header--big.webp"
                     alt="Odkryj wszechświat możliwości online"
-                    class="hidden md:block h-full object-cover box-shadow"
+                    class="hidden md:block h-full max-h-[1000px] object-cover box-shadow"
                     width="600"
                     height="600"
                 />

@@ -1,19 +1,30 @@
+<script setup>
+import OldSchoolCard from "@/Components/OldSchoolCard.vue";
+
+
+import { useGlobalMotion } from "@/motionSetup.js";
+
+const { textRight, textLeft} = useGlobalMotion();
+
+</script>
+
+
 <template>
     <!--YOUTUBE-->
     <section
-        class="bg-ownPurple-400 grid gap-24 lg:gap-0 lg:grid-cols-2 px-6 xl:px-12 py-16 lg:py-12 lg:h-[calc(100vh-71px)]"
+        class="bg-ownOrange-600 grid gap-24 lg:gap-0 lg:grid-cols-2 px-6 xl:px-12 py-16 lg:py-12 "
     >
         <!--LEFT-->
         <div class="flex flex-col justify-center items-center gap-12 lg:mr-12 xl:mx-24 2xl:mx-32 text-center ">
-            <h2 class="text-5xl xs:text-6xl lg:text-7xl xl:text-8xl  uppercase font-heading text-fontLight">
+            <h2 ref="textRight" class="text-5xl xs:text-6xl lg:text-7xl xl:text-8xl  uppercase font-heading text-own">
                 Zobacz mnie w akcji na YouTube!
             </h2>
-            <h3
-                class="text-xl md:text-2xl xl:text-3xl font-text leading-relaxed text-fontLight "
+            <h3 ref="textLeft"
+                class="text-xl md:text-2xl xl:text-3xl font-text leading-relaxed  "
             >
             Zapraszam Cię na mój kanał na YouTube, gdzie możesz zobaczyć jak pracuję nad różnymi projektami, testuję nowe technologie i narzędzia, oraz jak dzielę się swoimi spostrzeżeniami i doświadczeniami. 
             </h3>
-            <a href="https://www.youtube.com/@marekgacekdev" target="_blank"><PrimaryButton class="bg-ownYellow-400 hover:bg-ownYellow-600" aria-label="youTube">Sprawdź</PrimaryButton></a>
+            <a href="https://www.youtube.com/@marekgacekdev" target="_blank"><PrimaryButton aria-label="youTube">Sprawdź</PrimaryButton></a>
         </div>
 
         <!--RIGHT-->
@@ -50,7 +61,4 @@
     </section>
 </template>
 
-<script setup>
-import OldSchoolCard from "@/Components/OldSchoolCard.vue";
-import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
-</script>
+

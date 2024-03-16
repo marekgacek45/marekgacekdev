@@ -9,7 +9,7 @@ const props = defineProps({
 
 import { useGlobalMotion } from "@/motionSetup.js";
 
-const { textRight, textLeft,textBottom } = useGlobalMotion();
+const { textRight, textLeft} = useGlobalMotion();
 
 
 </script>
@@ -30,7 +30,7 @@ const { textRight, textLeft,textBottom } = useGlobalMotion();
                 class="lg:w-1/2 flex flex-col gap-20 justify-center lg:mr-3 py-6 lg:py-12"
             >
                 <div class="space-y-6 lg:space-y-4">
-                    <h2 ref="textBottom" class="text-5xl xs:text-6xl lg:text-7xl xl:text-8xl  uppercase font-heading text-ownYellow-400">Odkryj wszechświat możliwości online</h2>
+                    <h2 class="text-5xl xs:text-6xl lg:text-7xl xl:text-8xl  uppercase font-heading text-ownYellow-400">Odkryj wszechświat możliwości online</h2>
                     <h3 ref="textRight" class="font-text text-3xl ">
                         Odrzuć standardy - wybierz projekt stworzony specjalnie
                         dla Ciebie.
