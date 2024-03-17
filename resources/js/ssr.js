@@ -5,6 +5,8 @@ import createServer from "@inertiajs/vue3/server";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy";
 
+import PrimaryButton from './Components/Base/PrimaryButton.vue';
+
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
 createServer((page) =>
@@ -21,6 +23,7 @@ createServer((page) =>
             return createSSRApp({ render: () => h(App, props) })
                 .component("Link", Link)
                 .component("Head",Head)
+                .component('PrimaryButton',PrimaryButton)
                 .use(plugin)
                 .use(ZiggyVue, {
                     ...page.props.ziggy,

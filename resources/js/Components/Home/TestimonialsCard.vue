@@ -15,9 +15,9 @@ const currentIndex = ref(0);
 
 const currentLogo = computed(() => {
     if (testimonials.value.length > 0) {
-        const path = 'storage/' + testimonials.value[currentIndex.value].logo
-       
-        return path
+        const path = "storage/" + testimonials.value[currentIndex.value].logo;
+
+        return path;
     }
     return null;
 });
@@ -65,7 +65,6 @@ onUnmounted(() => {
 });
 </script>
 
-
 <template>
     <OldSchoolCard title="Opinie" ref="imgBottom">
         <div
@@ -74,11 +73,16 @@ onUnmounted(() => {
             <div
                 class="flex flex-col justify-center items-center gap-6 text-center"
             >
-                <a :href="currentLink" target="_blank" key="currentLink">
+                <a
+                    :href="currentLink"
+                    target="_blank"
+                    key="currentLink"
+                    class="min-w-[100px] max-w-[250px] h-[110px]"
+                >
                     <img
                         :src="currentLogo"
                         alt="logo firmy zadowolonej z moich usług"
-                        class="w-30 h-20"
+                        class="w-full h-full object-fill"
                         key="currentLogo"
                         width="150"
                         height="150"
@@ -121,4 +125,3 @@ onUnmounted(() => {
         </div>
     </OldSchoolCard>
 </template>
-

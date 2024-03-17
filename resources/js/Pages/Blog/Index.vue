@@ -1,55 +1,90 @@
-<template>
-    <Head title="Zanurz się w programistycznej lekturze">
-        <meta name="description" content="Jeśli kochasz programowanie i chcesz się nauczyć czegoś nowego, zapraszam Cię na mój blog, gdzie znajdziesz moje projekty, eksperymenty i wyzwania z różnych dziedzin IT. Pokażę Ci, jak tworzyć niesamowite aplikacje, jak używać nowoczesnych narzędzi i jak być lepszym programistą. Nie zwlekaj, dołącz do mnie i baw się dobrze!" />
-    </Head>
-    <Layout>
-        
-
-            <main
-            
-            >
-
-            <section class="bg-ownTurquise-400 section py-16 lg:py-24 mt-12">
-        <!--HEADING-->
-        <div class="max-w-screen-2xl mx-auto text-center px-4 sm:px-12 md:px-24 lg:px-12 2xl:px-24">
-
-            <h2 class=" text-5xl xs:text-6xl lg:text-7xl xl:text-8xl mb-24 uppercase font-heading">
-                Zanurz się w lekturze i odkryj ciekawostki z programistycznego świata
-            </h2>
-        </div>
-<!--BLOG-->
-       <!-- <div class="flex flex-col justify-center items-center  gap-12 md:gap-16"> -->
-       <div class="flex flex-col justify-center items-center  gap-12 md:gap-16 px-4 sm:px-0">
-
-
-<img src="/assets/images/home/blog-coming-soon.webp" alt="blog nadejdzie już niedługo" class="w-[500px]">
-<h2 class=" text-2xl xs:text-3xl lg:text-4xl xl:text-4xl  uppercase font-heading ">
-                Jeszcze momencik i będzie gotowe
-            </h2>
-
-           <!-- <BlogSection :posts="posts"/>
-
-           <primary-button aria-label="Zobacz wszytkie wpisy">Zobacz wszytkie wpisy</primary-button> -->
-        </div>
-
-
-      
-    </section>
-            
-        </main>
-    
-    </Layout>
-</template>
-
 <script setup>
 import Layout from "@/Layouts/Layout.vue";
 
-
-
-defineProps({
-    techs:Array
-})
-
-
+import TagBox from "@/Components/Blog/TagBox.vue";
 
 </script>
+
+
+<template>
+    <div>
+        <Head title="Zanurz się w programistycznej lekturze">
+            <meta
+                name="description"
+                content="Jeśli kochasz programowanie i chcesz się nauczyć czegoś nowego, zapraszam Cię na mój blog, gdzie znajdziesz moje projekty, eksperymenty i wyzwania z różnych dziedzin IT. Pokażę Ci, jak tworzyć niesamowite aplikacje, jak używać nowoczesnych narzędzi i jak być lepszym programistą. Nie zwlekaj, dołącz do mnie i baw się dobrze!"
+            />
+        </Head>
+        <Layout>
+            <main>
+                <section class="section bg-ownPurple-400">
+                    <!--CONTAINER-->
+                    <div
+                        class="wrapper gap-12 2xl:gap-24 py-16 lg:py-24 max-w-screen-2xl"
+                    >
+
+                    <!--RECENT POST CONTAINER-->
+                        <div class="grid grid-cols-3 gap-x-24 mt-16">
+                            <!--LEFT MAIN-->
+                            <div
+                                class="col-span-2 flex flex-col justify-start items-start gap-3"
+                            >
+                            <div class='w-full max-h-[500px] overflow-hidden'>
+
+                                <img
+                                src="/assets/images/2.jpg"
+                                alt=""
+                                class="w-full h-full object-cover hover:scale-110 duration-300 "
+                                />
+                            </div>
+                                <TagBox>Laravel</TagBox>
+                                <h2 class="text-5xl  uppercase font-heading">
+                                    Vote For The Greatest Game Of All Time In
+                                    Our Bracket Tournament | Round 3
+                                </h2>
+                            </div>
+                            <!--RIGHT-->
+                            <div
+                                class="col-span-1 flex flex-col justify-between"
+                            >
+                                <div class="flex flex-col justify-start items-start gap-4 border-b pb-2 border-black">
+                                    <img
+                                        src="/assets/images/2.jpg"
+                                        alt=""
+                                        class="w-full h-full object-cover max-h-[200px]"
+                                    />
+                                    <TagBox>Laravel</TagBox>
+                                    <h2 class="text-3xl  uppercase font-heading">
+                                        Vote For The Greatest Game Of All Time In
+                                        Our Bracket Tournament | Round 3
+                                    </h2>
+                                </div>
+
+                                <div class="flex flex-col justify-start items-start gap-2 border-b  pb-2 border-black">
+                                    
+                                    <TagBox>Laravel</TagBox>
+                                    <h2 class="text-3xl  uppercase font-heading">
+                                        Vote For The Greatest Game Of All Time In
+                                        Our Bracket Tournament | Round 3
+                                    </h2>
+                                </div>
+                                <div class="flex gap-4 flex-col justify-start items-start   ">
+                                    
+                                    <TagBox>Laravel</TagBox>
+                                    <h2 class="text-3xl  uppercase font-heading">
+                                        Vote For The Greatest Game Of All Time In
+                                        Our Bracket Tournament | Round 3
+                                    </h2>
+                                </div>
+                            </div>
+          
+                          
+                                
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </Layout>
+    </div>
+</template>
+
+
