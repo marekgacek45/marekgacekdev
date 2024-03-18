@@ -2,6 +2,13 @@
 import Layout from "@/Layouts/Layout.vue";
 
 import RecentPosts from "./Sections/RecentPosts.vue";
+
+const props = defineProps({
+    posts:Object
+})
+
+
+
 </script>
 
 <template>
@@ -17,7 +24,7 @@ import RecentPosts from "./Sections/RecentPosts.vue";
                 <section class="section bg-ownPurple-400">
                     <!--CONTAINER-->
                     <div class="wrapper gap-12 2xl:gap-24 py-16 lg:py-24">
-                        <RecentPosts />
+                        <RecentPosts :posts="posts"/>
                     </div>
                 </section>
             </main>

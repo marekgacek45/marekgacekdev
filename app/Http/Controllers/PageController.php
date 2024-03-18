@@ -69,6 +69,9 @@ class PageController extends Controller
 
         $posts = Post::latest()->take(4)->get();
 
+
+
+
         return Inertia('Blog/Index',['posts'=>$posts]);
     }
     public function contact()
