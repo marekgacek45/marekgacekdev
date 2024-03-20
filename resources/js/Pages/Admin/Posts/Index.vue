@@ -46,14 +46,14 @@
                             <td
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                             >
-                                {{ post.title }}
+                                <a  :href="route('post.show', post.slug)" target="_blank">{{ post.title }}</a>
                             </td>
 
                             <td class="px-6 py-4 hidden lg:table-cell">
                                 {{ formatDate(post.created_at) }}
                             </td>
                             <td class="px-6 py-4 flex gap-4 items-center">
-                                <Link  :href="route('admin.post.show', post.id)">zobacz</Link>
+                                
                                 <Link
                                 :href="route('admin.post.edit', post.id)"
                                    

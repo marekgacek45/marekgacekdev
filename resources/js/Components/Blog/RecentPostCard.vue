@@ -7,8 +7,8 @@ const props = defineProps({
 </script>
 
 <template>
-    <Link as="div"
-        class="flex lg:flex-col  justify-start items-start gap-8 lg:gap-4 border-b pb-6 lg:pb-2 border-black last-of-type:border-b-0 group cursor-pointer"
+    <Link :href="route('post.show', post.slug)" as="div"
+        class="flex lg:flex-col  justify-start items-start gap-8 lg:gap-4 border-b pb-6  lg:py-4 border-black last-of-type:border-b-0 group cursor-pointer"
     >
         <div class="lg:group-first:block lg:hidden w-full max-w-[300px] lg:max-w-none max-h-[200px] overflow-hidden">
             <img

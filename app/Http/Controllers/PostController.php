@@ -32,10 +32,12 @@ $categories = Category::all();
 
         $thumbnail = $request->file('thumbnail')->store('post', 'public');
       
+        $slug = \Illuminate\Support\Str::slug($request->title, '-');
 
         $post = Post::create([
            
             'title' => $request->title,
+            'slug' => $slug,
             'thumbnail' => $thumbnail,
             'content' => $request->content,
         ]);
