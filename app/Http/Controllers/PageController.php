@@ -67,7 +67,7 @@ class PageController extends Controller
     {
 
 
-        $posts = Post::latest()->take(4)->get();
+        $posts = Post::with('categories')->latest()->take(4)->get();
 
 
 

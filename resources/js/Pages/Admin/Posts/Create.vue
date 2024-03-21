@@ -116,11 +116,9 @@ defineProps({
 
 const form = useForm({
     title: "",
-    // site_link: "",
-    // youtube_link: "",
+   
     thumbnail: null,
-    // description: "",
-    // tool_id: [],
+    
     category_id: [],
     content:''
 });

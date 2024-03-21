@@ -20,7 +20,14 @@ const props = defineProps({
                     class="w-full h-full object-cover group-hover:scale-110 duration-300"
                 />
             </div>
-            <TagBox>Laravel</TagBox>
+            <div class="flex  gap-3">
+
+                <TagBox
+                v-for="category in post.categories"
+                :key="category.id"
+                >{{ category.name }}</TagBox
+                >
+            </div>
             <h2 class="text-3xl sm:text-5xl uppercase font-heading group-hover:animate-shake">
                {{post.title}}
             </h2>

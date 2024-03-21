@@ -53,7 +53,7 @@ const bgImage = computed(() => {
     class="flex flex-col justify-between items-center h-full px-10 lg:px-16 xl:px-4 2xl:px-12 py-8 border border-y-2 border-fontDark bg-no-repeat bg-cover transition-all duration-100 group-hover:border-dashed group-hover:bg-gray-600 group-hover:bg-blend-multiply"
     :class="[bgColor,bgImage]" 
 >
-            <div class="h-72 w-full">zzzzzzzzz
+            <div class="h-72 w-full">
                 <img
                     :src="'/storage/' + thumbnail"
                     :alt="altText"

@@ -60,13 +60,13 @@
                                 >
                                 <img src="/assets/icons/admin/edit.svg" alt="" class="w-6 hover:animate-shake">
                                 </Link>
-                                <!-- <button @click="openModal">
+                                <button @click="openModal">
                                     <img
                                         src="/assets/icons/admin/trash.svg"
                                         alt=""
                                         class="w-6 hover:animate-shake"
                                     />
-                                </button> -->
+                                </button>
 
                                 <v-if isModalOpen>
                                     <Modal

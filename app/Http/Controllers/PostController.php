@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Inertia\Inertia;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
 
 class PostController extends Controller
 {
@@ -32,7 +33,7 @@ $categories = Category::all();
 
         $thumbnail = $request->file('thumbnail')->store('post', 'public');
       
-        $slug = \Illuminate\Support\Str::slug($request->title, '-');
+        $slug = \Illuminate\Support\Str::slug($request->title, '_');
 
         $post = Post::create([
            
@@ -52,17 +53,49 @@ $categories = Category::all();
 
     public function show(Post $post){
 
+        $post->load('categories');
+
         return Inertia("Blog/SinglePost", ['post' => $post]);
     }
 
     public function edit(Post $post)
     {
 
-        // $project->load('tools');
-        // $project->load('categories');
+       
+        $post->load('categories');
 
 
-        // return Inertia('Admin/Projects/Edit', ['project' => $project,'tools' => Tool::all(),'categories'=>Category::all()]);
-        return Inertia('Admin/Posts/Edit', ['post' => $post]);
+        
+        return Inertia('Admin/Posts/Edit', ['post' => $post,'categories'=>Category::all()]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+
+
+        $thumbnail = $post->thumbnail;
+        if ($request->file('thumbnail')) {
+            Storage::delete('public/' . $post->thumbnail);
+            $thumbnail = $request->file('thumbnail')->store('post', 'public');
+        }
+      
+
+        $post->update([
+            'title' => $request->title,
+            
+            'image' => $thumbnail,
+            'content' => $request->content,
+        ]);
+
+     
+        $post->categories()->sync($request->category_id);
+
+
+        return Redirect::route('admin.post.index');
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
     }
 }

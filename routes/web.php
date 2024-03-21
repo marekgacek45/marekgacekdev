@@ -92,7 +92,7 @@ Route::middleware(['admin'])->group(function () {
         Route::post('/dodaj', [PostController::class, 'store'])->name('store');
         Route::get('/edytuj/{post}', [PostController::class, 'edit'])->name('edit');
         Route::get('/{post}', [PostController::class, 'show'])->name('show');
-        // Route::put('/edytuj/{project}', [ProjectController::class, 'update'])->name('update');
-        // Route::delete('/usun/{project}', [ProjectController::class, 'destroy'])->name('delete');
+        Route::put('/edytuj/{post}', [PostController::class, 'update'])->name('update');
+        Route::delete('/usun/{post}', [PostController::class, 'destroy'])->name('delete');
     });
 });
