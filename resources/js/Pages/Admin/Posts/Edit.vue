@@ -25,11 +25,7 @@
 
                         <Field>
                             <div class="flex justify-start items-center gap-4">
-                                <img
-                                    :src="'/storage/' + form.thumbnail"
-                                    alt=""
-                                    class="w-24"
-                                />
+                                <!-- <img :src="image" alt="" class="w-12" /> -->
                                 <input
                                     type="file"
                                     @input="
@@ -43,22 +39,14 @@
                         </Field>
 
                         <Field>
-                            <Label for="name" id="name">Kategorie</Label>
-                            <ul class="flex gap-6">
-                                <li
-                                    class="mt-6"
-                                    v-for="category in categories"
-                                    :key="category.id"
-                                >
-                                    <input
-                                        type="checkbox"
-                                        v-model="form.categories"
-                                        :value="category.id"
-                                    />
-                                    <label for="">{{ category.name }}</label>
-                                </li>
-                            </ul>
-                        </Field>
+    <Label for="name" id="name">Kategorie</Label>
+    <ul class="flex gap-6">
+        <li class="mt-6" v-for="category in categories" :key="category.id">
+            <input type="checkbox" v-model="form.categories" :value="category.id"/>
+            <label for="">{{ category.name }}</label>
+        </li>
+    </ul>
+</Field>
 
                         <Field>
                             <QuillEditor
@@ -76,7 +64,7 @@
 
                         <Field
                             ><PrimaryButton type="submit"
-                                >Dodaj</PrimaryButton
+                                >Edytuj</PrimaryButton
                             ></Field
                         >
                     </form>
@@ -100,16 +88,16 @@ import AdminLayout from "@/Layouts/AdminLayout.vue";
 
 import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
 
+import { router } from "@inertiajs/vue3";
 import { QuillEditor, Quill } from "@vueup/vue-quill";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 import ImageResize from "quill-image-resize";
 Quill.register("modules/imageResize", ImageResize);
-import { router } from "@inertiajs/vue3";
 
 const props = defineProps({
     form: Object,
-    post: Object,
     errors: Object,
+    post: Object,
     tools: Object,
     categories: Object,
 });
@@ -118,14 +106,21 @@ const props = defineProps({
 //     form.logo = e.target.files[0];
 // };
 
+console.log(props.post.categories);
+
 const form = useForm({
     title: props.post.title,
 
     thumbnail: props.post.thumbnail,
-    content: props.post.content,
 
+    content: props.post.content,
     categories: props.post.categories.map((category) => category.id),
 });
+
+
+
+
+// const image = "/storage/" + props.post.thumbnail;
 
 const submit = () => {
     // form.put(route("admin.testimonial.update", props.testimonial.id), {
@@ -137,9 +132,10 @@ const submit = () => {
     router.post(route("admin.post.update", props.post.id), {
         _method: "put",
         title: form.title,
-        thumbnail: form.image,
-        content: form.content,
-        category_id: form.categories,
+    
+    thumbnail:form.thumbnail,
+    content:form.content,
+    category_id:form.categories
     });
 };
 </script>

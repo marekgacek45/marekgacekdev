@@ -65,7 +65,6 @@ $categories = Category::all();
     public function update(Request $request, Project $project)
     {
 
-
         $image = $project->image;
         if ($request->file('image')) {
             Storage::delete('public/' . $project->image);
