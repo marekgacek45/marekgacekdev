@@ -1,9 +1,18 @@
+<script setup>
+
+import { useGlobalMotion } from "@/motionSetup.js";
+
+const { textRight, textLeft, imgBottom  } = useGlobalMotion();
+
+</script>
+
+
 <template>
     <section class="section lg:h-[calc(100vh-71px)] bg-bgLight-400">
         <!-- CONTAINER---->
         <div class="wrapper">
             <!-- IMAGE---->
-            <div
+            <div ref="imgBottom"
                 class="flex justify-center items-center h-96 lg:h-auto mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 xl:p-10 2xl:p-20 order-1 lg:order-none"
             >
                 <img
@@ -14,7 +23,7 @@
                 />
             </div>
             <!-- TEXT---->
-            <div
+            <div ref="textRight"
                 class="flex flex-col justify-center gap-6 lg:w-1/2 lg:mr-3 py-12"
             >
                 <h1 class="text-7xl font-heading text-ownPurple-400">Coś więcej niż praca</h1>
