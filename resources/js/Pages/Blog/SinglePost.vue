@@ -5,7 +5,6 @@ import TagBox from "@/Components/Blog/TagBox.vue";
 
 import moment from "moment";
 
-
 const formatDate = (date) => {
     return moment(date).format("LLLL");
 };
@@ -26,33 +25,51 @@ console.log(props.post);
         />
     </Head>
     <Layout>
-        <div class="max-w-screen-xl mx-auto mt-[70px]">
+        <div class="max-w-screen-xl mx-auto mt-[70px] px-4">
             <!--THUMBNAIL-->
             <img
                 :src="'/storage/' + post.thumbnail"
-                class="w-full object-cover mx-auto max-h-[700px]"
+                :alt="'miniaturka postu o tytule' + post.title"
+                class="w-full object-cover mx-auto max-h-[600px]"
             />
             <!--TITLE-->
             <div class="flex flex-col items-center gap-4">
-                <h1 class="text-center font-heading text-6xl mt-6">
+                <h1 class="text-center font-heading text-5xl md:text-6xl mt-6">
                     {{ post.title }}
                 </h1>
 
                 <div class="flex gap-3">
-
                     <TagBox
-                    v-for="category in post.categories"
-                    :key="category.id"
-                    >{{ category.name }}</TagBox
+                        v-for="category in post.categories"
+                        :key="category.id"
+                        >{{ category.name }}</TagBox
                     >
                 </div>
                 <span> {{ formatDate(post.created_at) }}</span>
             </div>
 
             <div
-                class="max-w-screen-lg mx-auto pt-12 py-24 font-text text-xl leading-relaxed"
+                class="max-w-[800px] mx-auto pt-12 py-24 font-text text-xl leading-relaxed content"
                 v-html="post.content"
             ></div>
         </div>
     </Layout>
 </template>
+
+<style scoped>
+.content :deep(pre.ql-syntax) {
+    @apply p-4 text-fontLight   bg-bgDark-600 mt-2 overflow-x-auto;
+}
+
+.content :deep(img) {
+    @apply mx-auto max-h-[400px];
+}
+
+.content :deep(a) {
+    @apply hover:underline;
+}
+
+.content :deep(h2) {
+    @apply text-2xl md:text-3xl;
+}
+</style>

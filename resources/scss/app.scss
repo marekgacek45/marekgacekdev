@@ -29,22 +29,22 @@ h2{
 }
 
 /*SCROLLBAR*/
-::-webkit-scrollbar {
-	width: 15px; /* szerokość paska przewijania */
+// ::-webkit-scrollbar {
+// 	width: 15px; /* szerokość paska przewijania */
   
-  }
+//   }
   
-  ::-webkit-scrollbar-track {
-	@apply bg-white; 
-  }
+  // ::-webkit-scrollbar-track {
+	// @apply bg-ownYellow-400; 
+  // }
   
-  ::-webkit-scrollbar-thumb {
-	@apply bg-bgDark-400 transition-colors; 
-  }
+  // ::-webkit-scrollbar-thumb {
+	// @apply bg-ownPurple-400 transition-colors; 
+  // }
   
-  ::-webkit-scrollbar-thumb:hover {
-	@apply bg-bgDark-200  transition-colors
-  }
+  // ::-webkit-scrollbar-thumb:hover {
+	// @apply bg-ownPurple-600  transition-colors
+  // }
 
 
 
