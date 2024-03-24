@@ -9,7 +9,7 @@
             >
                 <!-- CONTAINER---->
                 <div class="px-12 flex flex-col  lg:grid grid-cols-12 lg:h-[72vh] py-24">
-                    <div class="col-span-7 lg:h-[72vh] overflow-y-auto order-1 lg:order-none">
+                    <div ref="textLeft" class="col-span-7 lg:h-[72vh] overflow-y-auto order-1 lg:order-none">
                         <ServiceCard
                                 @mouseover="updateImage('/assets/images/services/services-2.webp')"
                                 title="strony internetowe"
@@ -44,7 +44,7 @@
 </ServiceCard
                             >
                     </div>
-                    <div class="col-span-5 w-full h-[400px] md:h-[600px] lg:h-[72vh] pb-12   lg:pl-6 lg:py-12 2xl:p-12 2xl:py-0"> <img :src="image" alt="" class="w-full h-full object-cover"></div>
+                    <div ref="textRight" class="col-span-5 w-full h-[400px] md:h-[600px] lg:h-[72vh] pb-12   lg:pl-6 lg:py-12 2xl:p-12 2xl:py-0"> <img :src="image" alt="" class="w-full h-full object-cover"></div>
                 </div>
             </main>
         </Layout>
@@ -56,6 +56,10 @@ import Layout from "@/Layouts/Layout.vue";
 
 import { ref } from "vue";
 import ServiceCard from "@/Components/ServiceCard.vue";
+
+import { useGlobalMotion } from "@/motionSetup.js";
+
+const { textRight, textLeft} = useGlobalMotion();
 
 let image = ref("/assets/images/services/services-12.webp");
 

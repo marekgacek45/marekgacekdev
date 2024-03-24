@@ -30,24 +30,16 @@
                             class="flex flex-col justify-center gap-6 lg:w-2/5 lg:mr-3 py-12 lg:ml-6  lg:mt-0"
                         >
                           
-                            <!-- <Vue3Marquee
-                pauseOnHover="true"
-                duration="10"
-                class=" overflow-hidden py-1"
-            >
-            <h1 class="text-7xl font-heading ml-3">
-                 Potrzebujesz wyceny?? Masz jakieś pytanie?? Chcesz po prostu pogadać??
-                        </h1>
-            </Vue3Marquee> -->
-                            <img src="/assets/images/contact/contact.webp" alt="" class="w-96 mx-auto" >
-                            <h2
+                          
+                            <img ref="textBottom" src="/assets/images/contact/contact.webp" alt="" class="w-96 mx-auto" >
+                            <h2 ref="textLeft"
                                 class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed"
                             >
                                 Śmiało, napisz do mnie za pomocą formularza lub wyślij maila.
                             </h2>
 
-                            <a href="mailto:kontakt@marekgacekdev.pl" class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed font-bold text-ownTurquise-400">kontakt@marekgacekdev.pl</a>
-                            <h2
+                            <a ref="textRight" href="mailto:kontakt@marekgacekdev.pl" class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed font-bold text-ownTurquise-400">kontakt@marekgacekdev.pl</a>
+                            <h2 
                                 class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed"
                             >
                                 Jeżeli wolisz to znajdź mnie na mediach społecznościowych
@@ -181,6 +173,9 @@ import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
 
 import { Vue3Marquee } from "vue3-marquee";
 
+import { useGlobalMotion } from "@/motionSetup.js";
+
+const { textRight, textLeft,textBottom } = useGlobalMotion();
 
 // const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
