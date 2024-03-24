@@ -59,6 +59,7 @@ export default {
                     600:"#161926"
                 },
                 vue: "#3eb780",
+                laravel:"#f33a2f"
             },
             animation: {
                 shake: " shake 0.5s infinite",

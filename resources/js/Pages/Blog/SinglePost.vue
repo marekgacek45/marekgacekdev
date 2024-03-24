@@ -42,6 +42,7 @@ console.log(props.post);
                     <TagBox
                         v-for="category in post.categories"
                         :key="category.id"
+                        :bgColor="category.name"
                         >{{ category.name }}</TagBox
                     >
                 </div>
