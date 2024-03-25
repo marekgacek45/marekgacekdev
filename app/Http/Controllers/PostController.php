@@ -14,7 +14,7 @@ class PostController extends Controller
     public function Index()
     {
 
-        $posts = Post::all();
+        $posts = Post::with('categories')->get();
 
         return Inertia('Admin/Posts/Index', ['posts' => $posts]);
     }

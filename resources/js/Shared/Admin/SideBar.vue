@@ -14,8 +14,8 @@
             <!--ITEMS-->
             <div>
                 <ul class="space-y-4">
-           <SidebarItem ><img src="/assets/icons/admin/dashboard.svg" alt="" width="32"> <span class="hidden xl:inline-block">Dashboard</span></SidebarItem>
-           <SidebarItem :href="route('admin.post.index')"><img src="/assets/icons/admin/post.svg" alt="" width="32"> <span class="hidden xl:inline-block">Posty</span></SidebarItem>
+           <SidebarItem ><img src="/assets/icons/pixel/kings_hat.svg" alt="" width="32"> <span class="hidden xl:inline-block">Dashboard</span></SidebarItem>
+           <SidebarItem :href="route('admin.post.index')"><img src="/assets/icons/pixel/open_chest.svg" alt="" width="32"> <span class="hidden xl:inline-block">Posty</span></SidebarItem>
            <SidebarItem :href="route('admin.project.index')"><img src="/assets/icons/admin/project.svg" alt="" width="32"> <span class="hidden xl:inline-block">Projekty</span></SidebarItem>
            <SidebarItem :href="route('admin.category.index')"><img src="/assets/icons/admin/category.svg" alt="" width="32"> <span class="hidden xl:inline-block">Kategorie</span></SidebarItem>
            <SidebarItem :href="route('admin.testimonial.index')"><img src="/assets/icons/admin/comment.svg" alt="" width="32"> <span class="hidden xl:inline-block">Opinie</span></SidebarItem>
