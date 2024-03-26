@@ -6,7 +6,8 @@ import TableDataCell from "@/Components/Admin/TableDataCell.vue";
 import TagBox from "@/Components/Blog/TagBox.vue";
 import BtnEdit from "@/Components/Admin/BtnEdit.vue";
 import BtnTrash from "@/Components/Admin/BtnTrash.vue";
-import Modal from "@/Components/Base/Modal.vue";
+import BtnCreate from '@/Components/Admin/BtnCreate.vue'
+import ModalDelete from "@/Components/Admin/ModalDelete.vue";
 
 defineProps({
     posts: Object,
@@ -79,80 +80,24 @@ const formatDate = (date) => {
                             <BtnEdit
                                 :link="route('admin.post.edit', post.id)"
                             />
-                            <button @click="openModal">
-                                <img
-                                    src="/assets/icons/admin/trash.svg"
-                                    alt=""
-                                    class="w-6 hover:animate-shake"
-                                />
-                            </button>
+                            <BtnTrash @open-modal="openModal" />
 
                             <v-if isModalOpen>
-                                <Modal
-                                    :title="'usuń'"
+                                <ModalDelete
+                                    name="post"
+                                    :href="route('admin.post.delete', post.id)"
                                     :isModalOpen="isModalOpen"
                                     @update:isModalOpen="isModalOpen = $event"
-                                    ><div class="text-black p-12 flex flex-col">
-                                        <span class="text-lg"
-                                            >Czy na pewno chcesz usunąć tę
-                                            opinię?</span
-                                        >
-                                        <div
-                                            class="flex justify-center items-center gap-12 mt-12"
-                                        >
-                                            <PrimaryButton>
-                                                <Link
-                                                    @click="closeModal"
-                                                    method="DELETE"
-                                                    :href="
-                                                        route(
-                                                            'admin.post.delete',
-                                                            post.id
-                                                        )
-                                                    "
-                                                >
-                                                    Tak
-                                                </Link>
-                                            </PrimaryButton>
-                                        </div>
-                                    </div></Modal
-                                >
+                                />
                             </v-if>
                         </TableDataCell>
                     </tr>
                 </Table>
             </div>
 
-            <div>
-                <Link
-                    :href="route('admin.post.create')"
-                    class="absolute bottom-6"
-                    ><img
-                        src="/assets/icons/admin/plus.svg"
-                        alt=""
-                        class="w-12 border-4 border-ownTurquise-400 bg-ownTurquise-400 rounded-full hover:animate-shake"
-                /></Link>
-            </div>
+           <BtnCreate :href="route('admin.post.create')"/>
+              
         </AdminLayout>
     </div>
 </template>
 
-<style scoped>
-.modal-fade-enter-from,
-.modal-fade-leave-to {
-    opacity: 0;
-    transform: scale(0.3);
-}
-
-.modal-fade-enter-to,
-.modal-fade-leave-from {
-    opacity: 1;
-    transform: scale(1) rotate(0);
-}
-
-.modal-fade-enter-active,
-.modal-fade-leave-active {
-    transition: opacity 1s ease,
-        transform 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-</style>
