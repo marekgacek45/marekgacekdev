@@ -33,7 +33,7 @@ class PostController extends Controller
 
         $thumbnail = $request->file('thumbnail')->store('post', 'public');
 
-        $slug = \Illuminate\Support\Str::slug($request->title, '_');
+        $slug = \Illuminate\Support\Str::slug($request->title, '-');
 
         $post = Post::create([
 
@@ -83,7 +83,7 @@ class PostController extends Controller
             $thumbnail = $request->file('thumbnail')->store('post', 'public');
         }
 
-        $slug = \Illuminate\Support\Str::slug($request->title, '_');
+        $slug = \Illuminate\Support\Str::slug($request->title, '-');
 
         $post->update([
             'title' => $request->title,
