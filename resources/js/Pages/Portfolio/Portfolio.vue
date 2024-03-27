@@ -36,20 +36,20 @@
             <transition-group
                 name="list"
                 tag="div"
-                class="flex w-full flex-wrap gap-8 justify-center"
+                class="flex w-full flex-wrap gap-12 justify-center"
             >
                 <OldSchoolCard
                     v-for="project in filteredProjects"
                     :key="project.id"
                     :title="project.title"
                     customClass=" w-full lg:w-1/3 2xl:w-1/4"
-                    class="project hover:animate-shake cursor-pointer"
+                    class="project hover:animate-shake cursor-pointer h-[330px]"
                     @click="openModal(project)"
                 >
                     <img
                         :src="'/storage/' + project.image"
                         alt="miniaturka projektu"
-                        class="max-h-[300px] w-full h-full object-cover"
+                        class="h-[287px] w-full object-cover"
                     />
                     <div
                         v-for="category in project.categories"

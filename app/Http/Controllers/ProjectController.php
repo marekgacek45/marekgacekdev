@@ -17,6 +17,8 @@ class ProjectController extends Controller
 
         $projects = Project::all();
 
+        $projects = $projects->shuffle();
+        
         return Inertia('Admin/Projects/Index', ['projects' => $projects]);
     }
 
