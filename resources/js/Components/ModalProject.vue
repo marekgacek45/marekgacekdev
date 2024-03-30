@@ -28,7 +28,7 @@
                             ></iframe>
                             <img
                                 v-else
-                                :src="activeProject.image"
+                                :src="'/storage/' + activeProject.image"
                                 alt=""
                                 class="w-full h-full object-cover"
                             />

@@ -42,7 +42,7 @@ $categories = Category::all();
         $project = Project::create([
             'title' => $request->title,
             'site_link' => $request->site_link,
-            'youtube_link' => $request->youtube_link,
+            'youtube_link' => $request->has('youtube_link') ? $request->youtube_link : null,
             'image' => $image,
             'description' => $request->description,
         ]);
@@ -77,7 +77,7 @@ $categories = Category::all();
         $project->update([
             'title' => $request->title,
             'site_link' => $request->site_link,
-            'youtube_link' => $request->youtube_link,
+            'youtube_link' => $request->has('youtube_link') ? $request->youtube_link : null,
             'image' => $image,
             'description' => $request->description,
         ]);

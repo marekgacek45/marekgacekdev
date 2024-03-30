@@ -42,10 +42,10 @@
                                 id="youtube_link"
                                 name="youtube_link"
                                 v-model="form.youtube_link"
-                                required
+                              
                             />
                             <Label for="youtube_link" id="youtube_link"
-                                >YT Link</Label
+                                >YT Link <span class="text-base">(iframe)</span></Label
                             >
 
                             <Error v-if="form.errors.youtube_link">{{
