@@ -6,10 +6,14 @@ import About from "@/Pages/Home/Sections/About.vue";
 import Blog from "@/Pages/Home/Sections/Blog.vue";
 import YouTube from "@/Pages/Home/Sections/YouTube.vue";
 
+import FirstSection from "@/Pages/Home/Sections/FirstSection.vue";
+import ContactSection from "@/Pages/Home/Sections/Contact.vue"
+
 const props = defineProps({
     posts: Array,
     testimonials: Array,
     services:Array,
+    tools:Array
 });
 </script>
 
@@ -21,6 +25,7 @@ const props = defineProps({
             content="Nie trać czasu na nudne i sztampowe strony internetowe. Zaufaj mi i zobacz, jak zrobię  z Twojej strony prawdziwą petardę. Oferuję nie tylko webdesign, ale też marketing internetowy na kosmicznym poziomie. Sprawdź i daj się zaskoczyć!"
         />
     </Head>
+
     <Layout>
         <Header></Header>
 
@@ -29,7 +34,11 @@ const props = defineProps({
 
             <Blog :posts="posts"/>
 
+            <FirstSection :tools="tools"/>
+
             <YouTube></YouTube>
+
+            <ContactSection/>
             
         </main>
     </Layout>
