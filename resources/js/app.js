@@ -13,6 +13,7 @@ import pl from "moment/dist/locale/pl";
 moment.updateLocale("pl", pl);
 
 import PrimaryButton from "./Components/Base/PrimaryButton.vue";
+import Button from './Components/Base/Button.vue'
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
@@ -37,6 +38,7 @@ createInertiaApp({
             .component("Link", Link)
             .component("Head", Head)
             .component("PrimaryButton", PrimaryButton)
+            .component('Button',Button)
             .mount(el);
     },
 });

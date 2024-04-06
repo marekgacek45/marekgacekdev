@@ -1,74 +1,68 @@
 <script setup>
 import { Vue3Marquee } from "vue3-marquee";
 import { useGlobalMotion } from "@/motionSetup.js";
+import Anchor from "@/Components/Base/Anchor.vue";
 
-const { textRight, textLeft } = useGlobalMotion();
+const { fromBottom, opacity } = useGlobalMotion();
 </script>
 
 <template>
-    <header class="section  mt-[71px] bg-ownYellow-400">
-        <!-- CONTAINER---->
-        <div class="wrapper">
-            <!-- TEXT---->
-            <div
-                class="flex flex-col justify-center gap-6 lg:w-1/2 lg:mr-3 py-12"
+    <header class="section mt-[71px] h-[calc(100vh-71px)] relative">
+        <!--VIDEO-BG-->
+        <video
+            autoplay
+            loop
+            muted
+            playsinline
+            poster="/assets/movies/header-poster.webp"
+            class="absolute inset-0 w-full h-full object-cover"
+        >
+            <source src="/assets/movies/header.mp4" type="video/mp4" />
+
+            Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+        </video>
+        <!--OVERLAY-->
+        <div
+            class="bg-black absolute top-0 right-0 left-0 bottom-0 opacity-50"
+        ></div>
+        <!--CONTENT-->
+        <div
+            ref="fromBottom"
+            class="absolute inset-0 -mt-24 flex flex-col justify-center items-center text-center px-6 gap-6 md:gap-12 max-w-screen-xl mx-auto"
+        >
+            <h1
+                class="text-4xl xs:text-6xl md:text-8xl 2xl:text-9xl font-heading text-ownYellow-400 uppercase leading-6"
+                style="line-height: 1.3"
             >
-                <h1
-                    ref="textRight"
-                    class="text-7xl md:text-8xl xl:text-9xl font-heading"
+                Zacznij od <br />
+                dobrej strony
+            </h1>
+            <h2 class="md:text-xl  2xl:text-2xl font-text text-fontLight tracking-widest">
+                Wszystko czego potrzebujesz, aby zablysnac w sieci
+            </h2>
+            <div class="flex flex-col  md:flex-row  gap-6 md:gap-12 mt-4">
+                <Button href="route('portfolio')" btnType="white"
+                    >Portfolio</Button
                 >
-                    Stwórz stronę swoich marzeń
-                </h1>
-                <h2
-                    ref="textLeft"
-                    class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed"
+                <Anchor href="#o-mnie" btnType="third"
+                    >Dowiedz sie wiecej</Anchor
                 >
-                    Projektuję, tworzę i rozwijam innowacyjne strony internetowe
-                    które zaprezentują Twoją markę, zachwycą Twoich klientów i
-                    dodadza wiarygodności Twojej i tak już niesamowitej
-                    organizacji
-                </h2>
-                <div>
-                    <Link href="route('portfolio')"
-                        ><primary-button aria-label="Portfolio"
-                            >Portfolio</primary-button
-                        ></Link
-                    >
-                </div>
-            </div>
-            <!-- IMAGE---->
-            <!-- <div class="flex justify-center items-center h-96 lg:h-auto mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 2xl:p-10 max-h-[1000px]" -->
-              <div  class="flex  flex-col justify-center items-center   mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 2xl:p-10 "
-            >
-                <img
-                    src="/assets/images/home/header--big.webp"
-                    alt="Odkryj wszechświat możliwości online"
-                    class="hidden md:block h-full max-h-[1000px] object-cover box-shadow"
-                    width="600"
-                    height="600"
-                />
-                <img
-                    src="/assets/images/home/header--small.webp"
-                    alt="Odkryj wszechświat możliwości online"
-                    class="md:hidden h-full object-cover box-shadow"
-                    width="600"
-                    height="400"
-                />
             </div>
         </div>
-        <!--END CONTAINER---->
+
         <!-- MARQUEE---->
-        <div class="flex justify-center pb-12">
+        <div ref="opacity" class="absolute bottom-4 xs:bottom-8 flex justify-center">
             <Vue3Marquee
                 :pauseOnHover="true"
                 :duration="30"
-                class="bg-bgDark-400 overflow-hidden py-1"
+                :clone="true"
+                class="bg-transparent text-ownPink-200 overflow-hidden py-3"
             >
                 <p
-                    class="text-6xl sm:text-7xl xl:text-8xl font-heading text-fontLight uppercase mr-2"
+                    class="text-3xl xs:text-4xl md:text-5xl test font-black uppercase mr-2 tracking-wider"
                 >
                     Strony WWW • Sklepy Internetowe • Design • Social Media •
-                    Copywriting • Fotografia • Artykuły Marketingowe • Wizytówki
+                    Copywriting • Fotografia • Artykuly Marketingowe • Wizytowki
                     Google •
                 </p>
             </Vue3Marquee>

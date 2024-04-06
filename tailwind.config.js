@@ -16,9 +16,9 @@ export default {
                 xs: "400px",
             },
             fontFamily: {
-                heading: ["Mouse Memoirs", "sans-serif"],
-                text: ["Archivo Narrow", "sans-serif"],
-                textArch: ["Archivo Narrow", "sans-serif"],
+                heading: ["PixelCraft", "sans-serif"],
+                text: ["BrokenConsole", "sans-serif"],
+                
             },
             colors: {
                 ownPurple: {

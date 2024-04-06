@@ -5,6 +5,31 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: 'PixelBit';
+  src: url('../../public/assets/fonts/Pixel\ Bit.otf') format('opentype'),
+       url('../../public/assets/fonts/Pixel\ Bit.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'BrokenConsole';
+  src: url('../../public/assets/fonts/BrokenConsole.otf') format('opentype'),
+       url('../../public/assets/fonts/BrokenConsole.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'PixelCraft';
+  src: url('../../public/assets/fonts/PixelCraft.otf') format('opentype'),
+       url('../../public/assets/fonts/PixelCraft.ttf') format('truetype');
+}
+
+.test{
+  font-family: "PixelCraft",sans-serif;
+}
+
+.test2{
+  font-family: "BrokenConsole",sans-serif;
+}
+
 /*GLOBAL*/
 /*
 h2{
@@ -14,6 +39,7 @@ h2{
 /*CUSTOM CLASS*/
 .box-shadow{
     box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.4);
+ 
 }
 
 .button-hover{
