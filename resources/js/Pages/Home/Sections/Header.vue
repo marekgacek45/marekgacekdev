@@ -32,15 +32,17 @@ const { fromBottom, opacity } = useGlobalMotion();
         >
             <h1
                 class="text-4xl xs:text-6xl md:text-8xl 2xl:text-9xl font-heading text-ownYellow-400 uppercase leading-6"
-                style="line-height: 1.3"
+              
             >
                 Zacznij od <br />
                 dobrej strony
             </h1>
-            <h2 class="md:text-xl  2xl:text-2xl font-text text-fontLight tracking-widest">
+            <h2
+                class="md:text-xl 2xl:text-2xl font-action text-fontLight tracking-widest"
+            >
                 Wszystko czego potrzebujesz, aby zablysnac w sieci
             </h2>
-            <div class="flex flex-col  md:flex-row  gap-6 md:gap-12 mt-4">
+            <div class="flex flex-col md:flex-row gap-6 md:gap-12 mt-4">
                 <Button href="route('portfolio')" btnType="white"
                     >Portfolio</Button
                 >
@@ -51,7 +53,10 @@ const { fromBottom, opacity } = useGlobalMotion();
         </div>
 
         <!-- MARQUEE---->
-        <div ref="opacity" class="absolute bottom-4 xs:bottom-8 flex justify-center">
+        <div
+            ref="opacity"
+            class="absolute bottom-4 xs:bottom-8 flex justify-center"
+        >
             <Vue3Marquee
                 :pauseOnHover="true"
                 :duration="30"
@@ -59,7 +64,7 @@ const { fromBottom, opacity } = useGlobalMotion();
                 class="bg-transparent text-ownPink-200 overflow-hidden py-3"
             >
                 <p
-                    class="text-3xl xs:text-4xl md:text-5xl test font-black uppercase mr-2 tracking-wider"
+                    class="text-3xl xs:text-4xl md:text-5xl font-heading font-black uppercase mr-2 tracking-wider"
                 >
                     Strony WWW • Sklepy Internetowe • Design • Social Media •
                     Copywriting • Fotografia • Artykuly Marketingowe • Wizytowki

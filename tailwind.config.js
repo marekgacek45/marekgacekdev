@@ -17,8 +17,8 @@ export default {
             },
             fontFamily: {
                 heading: ["PixelCraft", "sans-serif"],
-                text: ["BrokenConsole", "sans-serif"],
-                
+                action: ["BrokenConsole", "sans-serif"],
+                text: ["Reddit Mono", "monospace"],
             },
             colors: {
                 ownPurple: {
@@ -56,10 +56,10 @@ export default {
                 bgDark: {
                     200: "#333",
                     400: "#0f181f",
-                    600:"#161926"
+                    600: "#161926",
                 },
                 vue: "#3eb780",
-                laravel:"#f33a2f"
+                laravel: "#f33a2f",
             },
             animation: {
                 shake: " shake 0.5s infinite",

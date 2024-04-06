@@ -21,7 +21,7 @@ const buttonClasses = {
     <a :href='href'>
         <button
             type="button"
-            class="px-12 2xl:px-16 py-4 text-lg xs:text-xl md:text-2xl font-text font-bold hover:animate-shake duration-300 box-shadow "
+            class="px-12 2xl:px-16 py-4 text-lg xs:text-xl md:text-2xl font-action font-bold hover:animate-shake duration-300 box-shadow "
             :class="buttonClasses[btnType]"
             aria-label="{{ aria }}"
         >

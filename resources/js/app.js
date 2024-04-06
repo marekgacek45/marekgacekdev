@@ -14,6 +14,7 @@ moment.updateLocale("pl", pl);
 
 import PrimaryButton from "./Components/Base/PrimaryButton.vue";
 import Button from './Components/Base/Button.vue'
+import OldSchoolCard from "./Components/OldSchoolCard.vue";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
@@ -39,6 +40,7 @@ createInertiaApp({
             .component("Head", Head)
             .component("PrimaryButton", PrimaryButton)
             .component('Button',Button)
+            .component('OldSchoolCard',OldSchoolCard)
             .mount(el);
     },
 });

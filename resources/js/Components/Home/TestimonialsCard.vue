@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
-import OldSchoolCard from "../OldSchoolCard.vue";
 
 const props = defineProps({
     testimonials: Array,
@@ -89,10 +88,10 @@ onUnmounted(() => {
                     />
                 </a>
                 <div
-                    class="flex justify-center items-center font-textArch text-xl min-h-[140px] md:min-h-[175px] 2xl:min-h-[145px] md:px-12 lg:px-0"
+                    class="flex justify-center items-center min-h-[320px]  xs:min-h-[250px] md:min-h-[230px] 2xl:min-h-[200px] md:px-12 lg:px-0"
                     key="currentContent"
                 >
-                    <p>
+                    <p class="font-text text-base sm:text-lg">
                         {{ currentContent }}
                     </p>
                 </div>
