@@ -1,3 +1,13 @@
+<script setup>
+import { ref } from "vue";
+const isActive = ref(false);
+
+
+const toggleActive = () => {
+    isActive.value = !isActive.value;
+};
+</script>
+
 <template>
     <button
         class="hamburger hamburger--collapse inline-block lg:hidden"
@@ -11,15 +21,7 @@
     </button>
 </template>
 
-<script setup>
-import { ref } from "vue";
-const isActive = ref(false);
 
-// Funkcja do obsługi kliknięcia i przełączania klasy is-active
-const toggleActive = () => {
-    isActive.value = !isActive.value;
-};
-</script>
 
 <style scoped>
 /*!
@@ -53,7 +55,7 @@ const toggleActive = () => {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-   @apply bg-ownOrange-600
+   @apply bg-ownPurple-600
 }
 
 .hamburger-box {
@@ -80,7 +82,7 @@ const toggleActive = () => {
     transition-property: transform;
     transition-duration: 0.15s;
     transition-timing-function: ease;
-    @apply bg-ownPink-400
+    @apply bg-ownPurple-400
 }
 .hamburger-inner::before,
 .hamburger-inner::after {

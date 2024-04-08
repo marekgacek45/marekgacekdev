@@ -2,11 +2,11 @@
 import Layout from "@/Layouts/Layout.vue";
 
 import Header from "@/Pages/Home/Sections/Header.vue";
-import About from "@/Pages/Home/Sections/About.vue";
+import Services from "@/Pages/Home/Sections/Services.vue";
 import Blog from "@/Pages/Home/Sections/Blog.vue";
 import YouTube from "@/Pages/Home/Sections/YouTube.vue";
 
-import FirstSection from "@/Pages/Home/Sections/FirstSection.vue";
+import About from "@/Pages/Home/Sections/About.vue";
 import ContactSection from "@/Pages/Home/Sections/Contact.vue"
 
 const props = defineProps({
@@ -30,11 +30,11 @@ const props = defineProps({
         <Header></Header>
 
         <main>
-            <About :testimonials="testimonials" :services="services" />
+            <About :tools="tools"/>
+            <Services :testimonials="testimonials" :services="services" />
 
             <Blog :posts="posts"/>
 
-            <FirstSection :tools="tools"/>
 
             <YouTube></YouTube>
 

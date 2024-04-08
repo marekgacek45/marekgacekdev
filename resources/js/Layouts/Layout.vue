@@ -11,7 +11,7 @@
 
 <script setup>
 
-import NavBar from "@/Shared/Navigation/NavBar.vue";
+import NavBar from "@/Shared/NavBar.vue";
 import Footer from "@/Shared/Footer.vue";
 </script>
 

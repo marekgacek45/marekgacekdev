@@ -1,48 +1,67 @@
 <script setup>
-import ServicesCard from "@/Components/Home/ServicesBox.vue";
-import TestimonialsCard from "@/Components/Home/TestimonialsCard.vue";
-
-const props = defineProps({
-   testimonials:Array,
-   services:Array
-})
+import TechsMarquee from "@/Pages/Home/Sections/TechsMarquee.vue"
 
 import { useGlobalMotion } from "@/motionSetup.js";
 
-const { fromBottom} = useGlobalMotion();
+const { textRight, textLeft, imgBottom  } = useGlobalMotion();
 
+defineProps({
+    tools:Object
+})</script>
 
-</script>
 
 
 <template>
-    <section id="o-mnie" class="section  bg-ownPurple-400  ">
-        <!--CONTAINER-->
-        <div class="wrapper gap-12 2xl:gap-24 py-16 lg:py-12">
-             <!--LEFT-->
-            <div
-                class="flex justify-center items-center lg:h-auto lg:w-1/2 lg:px-12 lg:px-0"
+   
+
+<!-- <section
+        class="section lg:h-[calc(100vh-71px)]  mt-[71px] bg-ownOrange-600"
+    > -->
+    <section class="bg-ownPurple-400 section py-4">
+        <!-- CONTAINER---->
+        <div
+            class="wrapper"
+        >
+            <!-- TEXT---->
+            <div ref="textLeft"
+                class="flex flex-col justify-center gap-6 lg:w-1/2 lg:mr-3 "
             >
-                <ServicesCard :services="services"/>
+            <h1 class="text-7xl  font-heading text-ownYellow-400">
+            Czeesc, mam na imie Marek
+        </h1>
+        <h2 
+        class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed"
+        >
+        Jestem <span class="font-heading text-fontLight">WebDeveloperem</span>, który z pasją tworzy strony internetowe. 
+    </h2>
+    <h2 
+    class="text-2xl md:text-3xl xl:text-4xl font-text leading-relaxed"
+    >
+    Walczę na całej powierzchni programistycznego pola, wykorzystując <span class="font-heading text-fontLight">PHP</span> i <span class="font-heading text-fontLight">JavaScript</span> jako swoje oręża.
+</h2>
+
+               
             </div>
- <!--RIGHT-->
-            <div
-                class="lg:w-1/2 flex flex-col gap-20 justify-center  lg:mr-3 py-6 lg:py-12"
+            <!-- IMAGE---->
+            <div ref="imgBottom"
+                class="flex justify-center items-center h-96 lg:h-auto mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 xl:p-10 2xl:p-20"
             >
-                <div ref="fromBottom" class="space-y-6 lg:space-y-12 text-center lg:text-left" >
-                    <h2 
-                     class="text-4xl md:text-5xl xl:text-6xl  uppercase font-heading text-ownYellow-400 "  >wybierz projekt stworzony specjalnie
-                        dla Ciebie</h2>
-                    
-                    <h3 class="font-action text-3xl md:text-4xl ">
-                        Po prostu daj znac,<br> a ja zajme sie reszta!
-                    </h3>
-                </div>
-                <div >
-                    <TestimonialsCard :testimonials="testimonials"/>
-                </div>
+                <img
+                    src="/assets/images/about/about.webp"
+                    alt="zdjęcie przedstawiające mój wizerunek"
+                    class="h-full object-cover box-shadow"
+                    loading="lazy"
+                />
             </div>
         </div>
+        <!--END CONTAINER---->
+        <!-- MARQUEE---->
+        
     </section>
+    <div class="flex justify-center ">
+           <TechsMarquee :tools="tools"/>
+        </div>
+
+
 </template>
 

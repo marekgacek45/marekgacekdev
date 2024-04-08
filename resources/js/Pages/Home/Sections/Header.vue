@@ -7,7 +7,7 @@ const { fromBottom, opacity } = useGlobalMotion();
 </script>
 
 <template>
-    <header class="section mt-[71px] h-[calc(100vh-71px)] relative">
+    <header class="section mt-[69px] h-[calc(100vh-69px)] relative">
         <!--VIDEO-BG-->
         <video
             autoplay

@@ -8,7 +8,7 @@
                 class="w-20 mx-12"
             />
         </Vue3Marquee>
-</template>nology
+</template>
 
 <script setup>
 import { Vue3Marquee } from "vue3-marquee";

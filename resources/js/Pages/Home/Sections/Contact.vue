@@ -1,7 +1,7 @@
 <template>
   
-                <section
-                    class="section  mt-[71px] bg-ownPink-200"
+                <section id="kontakt"
+                    class="section  bg-ownPurple-400"
                 >
                 <div class="w-full mx-auto mt-12">
                     <Vue3Marquee

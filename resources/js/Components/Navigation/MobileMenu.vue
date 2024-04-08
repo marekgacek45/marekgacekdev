@@ -1,3 +1,13 @@
+<script setup>
+import SocialList from '@/Components/SocialList.vue';
+import NavLinks from '@/Components/Navigation/NavLinks.vue'
+
+defineProps({
+    showModal: Boolean,
+});
+
+</script>
+
 <template>
     <transition>
         <div
@@ -8,28 +18,15 @@
         <div class="modal flex justify-center items-center flex-col gap-5">
 
 
-                <LinksMobile/>
+                <NavLinks/>
               
-               <Social/>
-                
-                
+               <SocialList/>
                 
             </div>
         </div>
     </transition>
 </template>
 
-<script setup>
-
-
-import Social from '../Social.vue';
-import LinksMobile from './LinksMobile.vue';
-
-defineProps({
-    showModal: Boolean,
-});
-
-</script>
 
 <style lang="css" scoped>
 .modal {
@@ -48,12 +45,12 @@ defineProps({
 
 .v-enter-active,
 .v-leave-active {
-    transition:  ease, transform 1s ease; /* Dodanie transformacji dla płynnego ruchu */
+    transition:  ease, transform 1s ease; 
 }
 
 .v-enter-from,
 .v-leave-to {
-    /* opacity: 0; */
+    
     transform: translateX(100%); 
 }
 
@@ -63,7 +60,4 @@ defineProps({
     transform: translateX(0); 
 }
 
-/* .link {
-    @apply text-fontLight font-heading text-6xl lg:text-7xl uppercase opacity-70 hover:opacity-100 transition-opacity;
-} */
 </style>

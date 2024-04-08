@@ -65,7 +65,11 @@ const bgImage = computed(() => {
             >
                 {{ title }}
             </h2>
-           <SecondaryButton aria-label="Sprawdź"><Link href="#">Sprawdź</Link></SecondaryButton>
+            <Link as="button" 
+                 class="border-2 border-black w-full py-2 font-textArch mt-3 group-hover:bg-bgLight-200 button-hover font-action"
+             >
+                 Sprawdz
+             </Link>
         </div>
     </Link>
 </template>
