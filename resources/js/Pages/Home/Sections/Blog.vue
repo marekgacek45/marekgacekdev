@@ -13,14 +13,14 @@ const { fromBottom } = useGlobalMotion();
 </script>
 
 <template>
-    <section class="bg-bgDark-400 section py-16 lg:py-24">
+    <section class="bg-bgLight-400 section py-16 lg:py-24">
         <!--HEADING-->
         <div ref="fromBottom"
             
             class="max-w-screen-2xl mx-auto text-center px-4 sm:px-12 md:px-24 lg:px-12 2xl:px-24"
         >
             <h2
-                class="text-4xl xs:text-5xl lg:text-6xl xl:text-7xl mb-24 uppercase font-heading text-fontLight"
+                class="text-4xl xs:text-5xl lg:text-6xl xl:text-7xl mb-24 uppercase font-heading text-fontDark"
             >
                 Zanurz sie w lekturze i odkryj ciekawostki z programistycznego
                 swiata

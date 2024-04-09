@@ -12,7 +12,7 @@
             
                 <Link href="/" class="flex flex-start 2xl:justify-center items-center  gap-1 w-1/3 group">
                 <span class="font-action text-xl sm:text-3xl lg:text-4xl group-hover:text-ownTurquise-400 duration-300 mt-2">Marek</span>
-                <img src="/assets/logo/logo.png" alt="moje logo" class="w-20 " />
+                <img src="/assets/logo/logo.png" alt="moje logo" class="w-20 " width="65" height="50" />
                 <span class="font-action text-xl sm:text-3xl lg:text-4xl group-hover:text-ownPurple-400 duration-300 mt-2">Gacek</span>
             </Link>
             

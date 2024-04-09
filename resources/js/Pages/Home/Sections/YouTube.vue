@@ -12,7 +12,7 @@ const { textRight, textLeft} = useGlobalMotion();
 <template>
     <!--YOUTUBE-->
     <section
-        class="bg-ownPurple-400 grid gap-24 lg:gap-0 lg:grid-cols-2 px-6 xl:px-12 py-16 lg:py-12 "
+        class="bg-bgDark-400 grid gap-24 lg:gap-0 lg:grid-cols-2 px-6 xl:px-12 py-16 lg:py-12 "
     >
         <!--LEFT-->
         <div class="flex flex-col justify-center items-center gap-12 lg:mr-12 xl:mx-24 2xl:mx-32  ">
@@ -20,7 +20,7 @@ const { textRight, textLeft} = useGlobalMotion();
                 Zobacz mnie w akcji na YouTube!
             </h2>
             <h3 ref="textLeft"
-                class="text-xl md:text-2xl xl:text-3xl font-text leading-relaxed  "
+                class="text-xl md:text-2xl xl:text-3xl font-text leading-relaxed  text-fontLight "
             >
             Zapraszam Cię na mój kanał na YouTube, gdzie możesz zobaczyć jak pracuję nad różnymi projektami, testuję nowe technologie i narzędzia, oraz jak dzielę się swoimi spostrzeżeniami i doświadczeniami. 
             </h3>

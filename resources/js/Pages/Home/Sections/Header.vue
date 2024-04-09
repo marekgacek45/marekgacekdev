@@ -7,7 +7,7 @@ const { fromBottom, opacity } = useGlobalMotion();
 </script>
 
 <template>
-    <header class="section mt-[69px] h-[calc(100vh-69px)] relative">
+    <header class="bg-[url('/assets/movies/header-poster.webp')] bg-center bg-cover md:bg-none section mt-[69px] h-[calc(100vh-69px)] relative">
         <!--VIDEO-BG-->
         <video
             autoplay
@@ -15,7 +15,7 @@ const { fromBottom, opacity } = useGlobalMotion();
             muted
             playsinline
             poster="/assets/movies/header-poster.webp"
-            class="absolute inset-0 w-full h-full object-cover"
+            class="hidden md:block absolute inset-0 w-full h-full object-cover"
         >
             <source src="/assets/movies/header.mp4" type="video/mp4" />
 
@@ -55,7 +55,7 @@ const { fromBottom, opacity } = useGlobalMotion();
         <!-- MARQUEE---->
         <div
             ref="opacity"
-            class="absolute bottom-4 xs:bottom-8 flex justify-center"
+            class="absolute left-0 right-0 bottom-4 xs:bottom-8 flex justify-center"
         >
             <Vue3Marquee
                 :pauseOnHover="true"

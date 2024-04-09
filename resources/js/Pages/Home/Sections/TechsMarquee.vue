@@ -1,11 +1,11 @@
 <template>
-     <Vue3Marquee :clone="true" :duration="10" class="bg-bgLight-200 p-4  overflow-hidden">
+     <Vue3Marquee :clone="true" :duration="20" class="bg-bgDark-400 p-1   overflow-hidden ">
             
             <img
                 v-for="tool in tools"
                 :key="tool.id"
                 :src="toolLogo(tool)"
-                class="w-20 mx-12"
+                class="w-6 mx-6"
             />
         </Vue3Marquee>
 </template>

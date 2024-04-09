@@ -1,23 +1,31 @@
+<script setup>
+import FooterSocialItem from "@/Components/FooterSocialItem.vue";
+
+const today = new Date()
+const year = today.getFullYear()
+
+</script>
+
 <template>
     <footer class="bg-bgDark-400 py-16">
         <div
-            class="flex flex-col lg:flex-row justify-around 2xl:justify-between items-center gap-12 lg:gap-0  max-w-screen-xl mx-auto"
+            class="flex flex-col lg:flex-row justify-around 2xl:justify-between items-center gap-12 lg:gap-0  max-w-screen-2xl mx-auto"
         >
             <div
-                class="flex  flex-col xs:flex-row justify-center items-center gap-6 sm:gap-16 order-1 lg:order-none"
+                class="flex  flex-col sm:flex-row justify-center items-center gap-6 sm:gap-16 order-1 lg:order-none"
             >
                 <div
-                    class="flex justify-start items-center order-1 xs:order-none"
+                    class="flex justify-start items-center order-1 sm:order-none"
                 >
                     <div class="">
                         <h2
-                            class="font-heading text-6xl text-ownYellow-400  hover:text-ownTurquise-600 transition-color"
+                            class="font-heading text-3xl md:text-5xl text-ownYellow-400  hover:text-ownTurquise-600 transition-color"
                         >
                             <Link href="/">Marek<br />Gacek<br /></Link>
                         </h2>
 
                         <span
-                            class="flex gap-3 text-3xl font-heading text-fontLight  mt-4"
+                            class="flex gap-3 text-xl md:text-3xl font-heading text-fontLight  mt-4"
                             ><img
                                 src="/assets/icons/copy.svg"
                                 alt=""
@@ -30,7 +38,7 @@
                 <div class="max-w-[220px] lg:hidden 2xl:inline-block">
                     <a href="/assets/gifs/bolec.gif" target="_blank">
                         <p
-                            class=" text-3xl text-center xs:text-left font-heading text-ownPurple-400 hover:text-ownPink-200 transition:color"
+                            class=" text-2xl text-center sm:text-left font-heading text-ownPurple-400 hover:text-ownPink-200 transition:color"
                         >
                             Coco Jumbo i do przodu! <br />To moje hasło.
                             <br />Dobre, nie?
@@ -76,11 +84,3 @@
     </footer>
 </template>
 
-<script setup>
-import FooterSocialItem from "@/Components/FooterSocialItem.vue";
-
-const today = new Date()
-const year = today.getFullYear()
-
-
-</script>
