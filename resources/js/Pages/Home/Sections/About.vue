@@ -65,7 +65,5 @@ defineProps({
             </div>
         </div>
     </section>
-    <!-- <div class="flex justify-center ">
-           <TechsMarquee :tools="tools"/>
-        </div> -->
+    
 </template>
