@@ -12,8 +12,8 @@ defineProps({
 });
 
 const images = [
-    '/assets/images/my-photo.webp',
     '/assets/images/my-photo--pixel.webp',
+    '/assets/images/my-photo.webp',
 ]
 
 let currentImageIndex = ref(0)

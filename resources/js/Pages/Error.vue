@@ -1,11 +1,11 @@
 
 <template>
     <Layout >
-  <div class="mt-[71px] px-4 sm:px-0 py-12 lg:py-24 lg:h-[calc(100vh-371px)] flex flex-col justify-center items-center gap-6 bg-ownPurple-400">
-      <img :src="image" alt="" class="w-[400px]">
+  <div class="mt-[71px] px-4 sm:px-0 py-12 lg:py-24 lg:h-[calc(100vh-371px)] flex flex-col justify-center items-center gap-6 bg-bgLight-400">
+      <img :src="image" alt="" class="w-[250px]">
       <H1 class="text-2xl md:text-3xl xl:text-5xl font-heading">{{ title }}</H1>
     <span class="text-center text-lg md:text-xl  xl:text-2xl font-text">{{ description }}</span>
-<PrimaryButton @click="back" class="bg-ownYellow-400 hover:bg-ownYellow-600" aria-label="powrót">Powrót</PrimaryButton>
+<Button @click="back"  aria-label="powrót">Powrót</Button>
   </div>
 </Layout>
 </template>
@@ -22,28 +22,28 @@ const props = defineProps({ status: Number })
 
 const title = computed(() => {
   return {
-    503: '503: ',
-    500: '500: ',
+    503: '503 ',
+    500: '500 ',
     404: '404',
-    403: '403: n',
+    403: '403',
   }[props.status]
 })
 
 const image = computed(() => {
   return {
-    503: '/assets/images/header.png',
-    500: '/assets/images/header.png',
-    404: '/assets/images/header.png',
-    403: '/assets/images/header.png',
+    503: '/assets/images/error.webp',
+    500: '/assets/images/error.webp',
+    404: '/assets/images/error.webp',
+    403: '/assets/images/error.webp',
   }[props.status]
 })
 
 const description = computed(() => {
   return {
-    503: 'Sorry, we are doing some maintenance. Please check back soon.',
-    500: 'Whoops, something went wrong on our servers.',
+    503: 'Wróc później...',
+    500: 'Brak odpowiedzi z serwera...',
     404: 'Niestety nie ma takiej strony...',
-    403: 'Sorry, you are forbidden from accessing this page.',
+    403: 'Nie posiadasz uprawnień do tej strony...',
   }[props.status]
 })
 

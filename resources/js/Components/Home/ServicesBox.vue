@@ -27,9 +27,9 @@ const change = (text, image, background, index) => {
 <template>
     <OldSchoolCard title="uslugi" ref="fromBottom">
         <div class="border-x-2 border-black " :class="currentBackground">
-            <img :src="currentImage" alt="" class="w-full h-[400px] sm:h-[450px] " />
+            <img :src="currentImage" alt="obrazek przedstawiający pracującego robota" loading="lazy" width="660" height="450" class="w-full h-[400px] sm:h-[450px] " />
             <div class="px-6 py-10 min-h-[420px] xs:min-h-[350px]  sm:min-h-64   2xl:min-h-50 border-t-2 border-fontDark flex justify-center items-center">
-                <p class="text-lg test font-medium ">{{ currentText }}</p>
+                <p class="text-lg font-text ">{{ currentText }}</p>
             </div>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-4">
