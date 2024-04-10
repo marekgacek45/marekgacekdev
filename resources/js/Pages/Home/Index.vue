@@ -9,6 +9,8 @@ import YouTube from "@/Pages/Home/Sections/YouTube.vue";
 import About from "@/Pages/Home/Sections/About.vue";
 import ContactSection from "@/Pages/Home/Sections/Contact.vue"
 
+
+
 const props = defineProps({
     posts: Array,
     testimonials: Array,
@@ -19,7 +21,7 @@ const props = defineProps({
 
 <template>
     <Head>
-        <title>Coś więcej niż strony internetowe | Marek Gacek</title>
+        <title>Marek Gacek - Coś więcej niż strony internetowe</title>
         <meta
             name="description"
             content="Nie trać czasu na nudne i sztampowe strony internetowe. Zaufaj mi i zobacz, jak zrobię  z Twojej strony prawdziwą petardę. Oferuję nie tylko webdesign, ale też marketing internetowy na kosmicznym poziomie. Sprawdź i daj się zaskoczyć!"

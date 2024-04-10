@@ -1,7 +1,6 @@
 <script setup>
-import { useGlobalMotion } from "@/motionSetup.js";
 
-const { fromBottom} = useGlobalMotion();
+
 </script>
 
 <template>

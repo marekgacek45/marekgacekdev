@@ -1,8 +1,8 @@
 <script setup>
 import FooterSocialItem from "@/Components/FooterSocialItem.vue";
 
-const today = new Date()
-const year = today.getFullYear()
+const year = new Date().getFullYear()
+
 
 </script>
 
@@ -37,12 +37,12 @@ const year = today.getFullYear()
                 </div>
                 <div class="max-w-[220px] lg:hidden 2xl:inline-block">
                     <a href="/assets/gifs/bolec.gif" target="_blank">
-                        <p
+                        <span
                             class=" text-2xl text-center sm:text-left font-heading text-ownPurple-400 hover:text-ownPink-200 transition:color"
                         >
                             Coco Jumbo i do przodu! <br />To moje hasło.
                             <br />Dobre, nie?
-                        </p>
+                        </span>
                     </a>
                 </div>
             </div>
