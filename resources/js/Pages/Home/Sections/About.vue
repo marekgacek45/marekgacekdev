@@ -1,69 +1,100 @@
 <script setup>
-import TechsMarquee from "@/Pages/Home/Sections/TechsMarquee.vue";
+import ToolsMarquee from "@/Components/Home/ToolsMarquee.vue";
+import AboutParagraph from "@/Components/Home/AboutParagraph.vue";
 
 import { useGlobalMotion } from "@/motionSetup.js";
 
-const { textRight, textLeft, imgBottom } = useGlobalMotion();
+import {ref,onMounted} from 'vue'
+const { fromRight,fromBottom } = useGlobalMotion();
 
 defineProps({
     tools: Object,
 });
+
+const images = [
+    '/assets/images/my-photo.webp',
+    '/assets/images/my-photo--pixel.webp',
+]
+
+let currentImageIndex = ref(0)
+
+let currentImage = ref(images[currentImageIndex.value])
+
+onMounted(() => {
+  setInterval(() => {
+    currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
+    currentImage.value = images[currentImageIndex.value];
+  }, 3000); 
+});
+
+
 </script>
 
 <template>
-    <!-- <section
-        class="section lg:h-[calc(100vh-71px)]  mt-[71px] bg-ownOrange-600"
-    > -->
-    <section class="bg-bgLight-400 section py-4">
+    <section class="bg-bgLight-400  pt-24 pb-12">
         <!-- CONTAINER---->
-        <div class="wrapper relative">
-            <!-- TEXT---->
+        <Wrapper class="xl:flex-row max-w-screen-2xl ">
+            <!-- IMG---->
             <div
-                ref="textLeft"
-                class="flex flex-col justify-center gap-6 lg:w-1/2 lg:mr-3"
-            >
-                <Heading>Czesc, mam na imie Marek</Heading>
-                <h3
-                    class="text-2xl md:text-3xl xl:text-3xl font-text leading-relaxed text-fontDark"
-                >
-                    Jestem
-                    <span class="font-heading text-ownYellow-400"
-                        >WebDeveloperem</span
-                    >, który z pasją tworzy strony internetowe.
-                </h3>
-                <h3
-                    class="text-2xl md:text-3xl xl:text-3xl font-text leading-relaxed text-fontDark"
-                >
-                    Walczę na całej powierzchni programistycznego pola,
-                    wykorzystując
-                    <span class="font-heading text-ownYellow-400 text-"
-                        >PHP</span
-                    >
-                    i
-                    <span class="font-heading text-ownYellow-400"
-                        >JavaScript</span
-                    >
-                    jako swoje oręża.
-                </h3>
-                <div class="flex justify-center ">
-           <TechsMarquee :tools="tools"/>
-        </div>
-            </div>
-            <!-- IMAGE---->
-            <div
-                ref="imgBottom"
-                class="flex justify-center items-center h-96 lg:h-auto mt-6 mb-12 lg:w-1/2 lg:py-16 lg:px-4 xl:p-10 2xl:p-20"
+                ref="fromBottom"
+                class="flex justify-center items-center  xl:h-auto mt-6 mb-12 xl:w-1/2  lg:pr-10 2xl:pr-16 "
             >
                 <div class="flex flex-col relative">
                     <img
-                        src="/assets/images/about/about.webp"
+                        
+                       :src="currentImage"
                         alt="zdjęcie przedstawiające mój wizerunek"
                         class="h-full object-cover box-shadow"
                         loading="lazy"
+                        width="580"
+                        height="580"
                     />
                 </div>
             </div>
-        </div>
+            <!--TEXT-->
+            <div
+                ref="fromRight"
+                class="flex flex-col justify-center gap-6 text-center xl:text-left xl:w-1/2 lg:mr-3"
+            >
+                <Heading>Czesc, mam na imie Marek</Heading>
+                <AboutParagraph
+                    >Jestem
+                    <span class="font-heading text-ownPink-400"
+                        >WebDeveloperem</span
+                    >, który z pasją tworzy strony internetowe.</AboutParagraph
+                >
+                <AboutParagraph>
+                    Walczę na całej powierzchni programistycznego pola,
+                    wykorzystując
+                    <span class="font-heading text-ownPurple-400 text-"
+                        >PHP</span
+                    >
+                    i
+                    <span class="font-heading text-ownTurquise-400"
+                        >JavaScript</span
+                    >
+                    jako swoje oręża.</AboutParagraph
+                >
+
+                <ToolsMarquee :tools="tools" />
+                <AboutParagraph>
+                    Na swojej ścieżce programisty ukończyłem wiele kursów min.
+                    <span class="font-heading text-ownPink-400"
+                        >Opanuj JS-Przeprogramowani</span
+                    >
+                    czy
+                    <span class="font-heading text-ownPurple-400"
+                        >wtf-Maciej Korsan</span
+                    >.
+                </AboutParagraph>
+                <AboutParagraph>
+                    Oprócz tego jestem certyfikowanym specjalistą
+                    <span class="font-heading text-ownTurquise-400"
+                        >google</span
+                    >
+                    z zakresu marketingu.</AboutParagraph
+                >
+            </div>
+        </Wrapper>
     </section>
-    
 </template>

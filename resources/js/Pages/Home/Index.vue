@@ -30,10 +30,10 @@ const props = defineProps({
         <Header></Header>
 
         <main>
-            <Services :testimonials="testimonials" :services="services" />
-            
-            <Blog :posts="posts"/>
             <About :tools="tools"/>
+            
+            <Services :testimonials="testimonials" :services="services" />
+            <Blog :posts="posts"/>
 
 
             <YouTube></YouTube>

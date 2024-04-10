@@ -16,7 +16,7 @@ const { fromBottom} = useGlobalMotion();
 
 
 <template>
-    <section id="o-mnie" class="bg-bgLight-400 section py-4  bg-blend-multiply">
+    <section id="o-mnie" class="bg-bgLight-400 pt-12 pb-12">
         <!--CONTAINER-->
         <div class="px-12 mx-auto flex   gap-12 2xl:gap-32 py-16 lg:py-12">
              <!--LEFT-->

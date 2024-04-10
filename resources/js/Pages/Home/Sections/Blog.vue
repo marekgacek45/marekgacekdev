@@ -13,7 +13,7 @@ const { fromBottom } = useGlobalMotion();
 </script>
 
 <template>
-    <section class="bg-bgLight-400 section py-16 lg:py-24">
+    <section class="bg-bgLight-400 pt-12 pb-24 lg:py-24">
         <!--HEADING-->
         <div ref="fromBottom"
             
