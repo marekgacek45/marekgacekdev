@@ -18,30 +18,25 @@ const buttonClasses = {
 </script>
 
 <template>
-    <a v-if="destiny === 'anchor'" :href="href">
-        <button
-            type="button"
-            class="common-btn box-shadow"
-            :class="buttonClasses[btnType]"
-            aria-label="{{ aria }}"
-        >
-            <slot></slot></button
-    ></a>
-
-    <Link
-        v-else
-        as="button"
-        type="button"
+    <a
+        v-if="destiny === 'anchor'"
+        :href="href"
         class="common-btn box-shadow"
         :class="buttonClasses[btnType]"
+        aria-label="{{ aria }}"
     >
+        >
+        <slot></slot
+    ></a>
+
+    <Link v-else class="common-btn box-shadow" :class="buttonClasses[btnType]">
         <slot></slot>
     </Link>
 </template>
 
 <style scoped>
 .common-btn {
-    @apply px-12 2xl:px-16 py-4 text-lg xs:text-xl md:text-2xl font-action font-bold hover:animate-shake duration-300 ;
+    @apply px-12 2xl:px-16 py-4 text-lg xs:text-xl md:text-2xl font-action font-bold hover:animate-shake duration-300;
 }
 
 .primary {

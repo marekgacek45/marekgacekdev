@@ -32,11 +32,9 @@ require __DIR__ . '/auth.php';
 
 
 Route::get('/', [PageController::class, 'home']);
-// Route::get('/o_mnie', [PageController::class, 'about']);
-// Route::get('/uslugi', [PageController::class, 'services']);
+
 Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
-// Route::get('/kontakt', [PageController::class, 'contact'])->name('contact');
-// Route::post('/kontakt', [FormController::class, 'contact'])->name('contact.form');
+
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/blog/{post:slug}', [PostController::class, 'show'])->name('post.show');
 

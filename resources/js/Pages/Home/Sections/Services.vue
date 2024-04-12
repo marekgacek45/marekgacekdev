@@ -16,14 +16,14 @@ const { fromBottom,fromRight} = useGlobalMotion();
 
 
 <template>
-    <section id="o-mnie" class="bg-bgLight-400 pt-12 pb-12">
+    <section id="o-mnie" class="bg-bgLight-400 pt-12 pb-12 ">
         <!--CONTAINER-->
-        <Wrapper class="xl:flex-row gap-6 2xl:gap-32">
+        <Wrapper class="xl:flex-row gap-6 2xl:gap-32 max-w-screen-max">
              <!--LEFT-->
            
  <!--RIGHT-->
             <div
-                class="xl:w-1/2 flex flex-col gap-20 justify-center  lg:mr-3 py-6 lg:py-12"
+                class="xl:w-1/2 flex flex-col gap-20 justify-center  lg:mr-3 py-6 lg:py-12 "
             >
                 <div  ref="fromRight"  class="space-y-6 lg:space-y-12 text-center lg:text-left order-1 xl:order-none" >
                     <Heading 

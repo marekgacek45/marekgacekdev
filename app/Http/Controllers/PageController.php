@@ -26,25 +26,25 @@ class PageController extends Controller
             [
                 'label' => "WWW",
                 'text' => "Tworzę innowacyjne, responsywne oraz błyskawicznie działające strony internetowe dostosowane do Twoich indywidualnych potrzeb, byś mógł zachwycić swoich odbiorców. Koniec z gotowcami stawianymi od szablonu oraz technologii które pamiętają stare czasy!",
-                'image' => "/assets/images/service--one.webp",
+                'image' => "/assets/images/marekgacekdev-12.webp",
                 'background' => "bg-ownPink-400",
             ],
             [
                 'label' => "DESIGN",
                 'text' => "Zaprezentuję Ci wyjątkowe projekty, stworzone z myślą o Tobie! Styl moich witryn to efekt indywidualnego podejścia, dostosowanego do specyfiki Twojej branży oraz osobistych preferencji. Wyrwij się spod wpływu szablonów z poprzedniej dekady – każdy mój projekt to nowoczesny design i świeży styl.",
-                'image' => "/assets/images/service--two.webp",
+                'image' => "/assets/images/marekgacekdev-20.webp",
                 'background' => "bg-ownYellow-400",
             ],
             [
                 'label' => "SOCIAL MEDIA",
                 'text' => "Oferuję kompleksowe zarządzanie mediów społecznościowych! Zajmuję się nie tylko tworzeniem, ale również aktywnym prowadzeniem profili na platformach społecznościowych. Zaufaj mi, abyś mógł skupić się na rozwoju swojego biznesu, a ja zadbanym o Twój wizerunek online!",
-                'image' => "/assets/images/service--three.webp",        
+                'image' => "/assets/images/marekgacekdev-7.webp",        
                 'background' => "bg-ownTurquise-400",
             ],
             [
                 'label' => "TREŚCI",
                 'text' => "Zapewniam kompleksową obsługę treści dla Twojej strony internetowej! Specjalizuję się nie tylko w pisaniu tekstów, ale również w fotografii. Moje usługi obejmują tworzenie treści, które przyciągają uwagę i angażują czytelnika, a także dodawanie unikalnych wizualnych doświadczeń poprzez fotografie.",
-                'image' => "/assets/images/service--four.webp",
+                'image' => "/assets/images/marekgacekdev-30.webp",
                 'background' => "bg-ownOrange-600",
             ],
         ];

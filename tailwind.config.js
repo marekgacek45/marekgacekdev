@@ -14,6 +14,7 @@ export default {
         extend: {
             screens: {
                 xs: "400px",
+                max:'1980px'
             },
             fontFamily: {
                 heading: ["PixelCraft", "sans-serif"],

@@ -6,11 +6,11 @@ const { fromBottom, fromLeft } = useGlobalMotion();
 </script>
 
 <template>
-    <GridSection class="bg-bgDark-400">
+    <GridSection class="bg-bgDark-400  ">
         <!--LEFT-->
         <div
             ref="fromLeft"
-            class="flex flex-col justify-center items-center gap-12 lg:mr-12 xl:mx-24 2xl:mx-32"
+            class="flex flex-col justify-center items-center gap-12 lg:mr-12 xl:mx-24 2xl:mx-32 "
         >
             <Heading class="text-ownYellow-400"
                 >Zobacz mnie w akcji na YouTube!</Heading

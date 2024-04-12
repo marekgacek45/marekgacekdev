@@ -5,7 +5,7 @@ import { createApp, h } from "vue";
 import { createInertiaApp, Link, Head } from "@inertiajs/vue3";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy";
-import { VueReCaptcha, useReCaptcha } from "vue-recaptcha-v3";
+
 import { MotionPlugin } from "@vueuse/motion";
 
 import moment from "moment/dist/moment";
@@ -32,10 +32,7 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
-            .use(VueReCaptcha, {
-                siteKey: captcheKey,
-                loaderOptions: { useRecaptchaNet: true },
-            })
+           
             .use(MotionPlugin)
             .use(moment)
             .component("Link", Link)

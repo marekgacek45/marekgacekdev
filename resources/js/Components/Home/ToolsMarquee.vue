@@ -1,3 +1,5 @@
+
+
 <script setup>
 import { Vue3Marquee } from "vue3-marquee";
 
@@ -17,8 +19,7 @@ tools:Object
                 :key="tool.id"
                 :src="'/storage/' + tool.logo"
                 class="w-8 mx-6"
-                :alt="'logo' + logo.name"
-
+                :alt="'logo' + tool.name"
                 loading="lazy"
                 width="30"
                 height="30"

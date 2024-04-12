@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-use App\Rules\Recaptcha;
+
 
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -28,7 +28,7 @@ class ContactFormRequest extends FormRequest
             'email'=>'required|email',
             "phone"=>'max:20',
             "message"=>'required',
-            'captcha_token'  => [new Recaptcha],
+           
         ];
     }
 }

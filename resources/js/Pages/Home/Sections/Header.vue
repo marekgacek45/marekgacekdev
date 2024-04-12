@@ -1,7 +1,7 @@
 <script setup>
 import { Vue3Marquee } from "vue3-marquee";
 import { useGlobalMotion } from "@/motionSetup.js";
-import Anchor from "@/Components/Base/Anchor.vue";
+
 
 const { fromBottom, opacity } = useGlobalMotion();
 </script>
@@ -46,8 +46,8 @@ const { fromBottom, opacity } = useGlobalMotion();
                 <Button href="route('portfolio')" btnType="white"
                     >Portfolio</Button
                 >
-                <Anchor href="#o-mnie" btnType="third"
-                    >Dowiedz sie wiecej</Anchor
+                <Button type="anchor" href="#o-mnie" btnType="third"
+                    >Dowiedz sie wiecej</Button
                 >
             </div>
         </div>

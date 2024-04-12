@@ -1,5 +1,5 @@
 <script setup>
-import PrimaryButton from "@/Components/Base/PrimaryButton.vue";
+
 import BlogSection from "@/Components/Home/BlogSection.vue";
 
 defineProps({
@@ -19,16 +19,15 @@ const { fromBottom } = useGlobalMotion();
             
             class="max-w-screen-2xl mx-auto text-center px-4 sm:px-12 md:px-24 lg:px-12 2xl:px-24"
         >
-            <h2
-                class="text-4xl xs:text-5xl lg:text-6xl xl:text-7xl mb-24 uppercase font-heading text-fontDark"
+            <Heading 
             >
-                Zanurz sie w lekturze i odkryj ciekawostki z programistycznego
+                Zanurz sie w lekturze i odkryj ciekawostki z cyber
                 swiata
-            </h2>
+            </Heading>
         </div>
       
         <div
-            class="flex flex-col justify-center items-center gap-12 md:gap-16 px-4 sm:px-0"
+            class="flex flex-col justify-center items-center gap-12 md:gap-16 px-4 sm:px-0 mt-12"
         >
          
 

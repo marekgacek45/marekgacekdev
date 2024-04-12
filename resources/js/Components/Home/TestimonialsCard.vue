@@ -76,7 +76,7 @@ onUnmounted(() => {
                     :href="currentLink"
                     target="_blank"
                     key="currentLink"
-                    class="min-w-[100px] max-w-[250px] h-[110px]"
+                    class="min-w-[100px]  max-w-[175px]   h-[75px] md:h-[100px] 2xl:h-[125px]"
                 >
                     <img
                         :src="currentLogo"
@@ -88,10 +88,10 @@ onUnmounted(() => {
                     />
                 </a>
                 <div
-                    class="flex justify-center items-center min-h-[320px]  xs:min-h-[250px] md:min-h-[230px] 2xl:min-h-[200px] md:px-12 lg:px-0"
+                    class="flex justify-center items-center min-h-[150px]  md:min-h-[175px] 2xl:min-h-[100px] md:px-12 lg:px-0"
                     key="currentContent"
                 >
-                    <p class="font-text text-base sm:text-lg">
+                    <p class="font-text text-base sm:text-lg line-clamp-5 2xl:line-clamp-3">
                         {{ currentContent }}
                     </p>
                 </div>

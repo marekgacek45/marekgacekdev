@@ -12,8 +12,8 @@ defineProps({
 });
 
 const images = [
-    '/assets/images/my-photo--pixel.webp',
     '/assets/images/my-photo.webp',
+    '/assets/images/my-photo--pixel.webp',
 ]
 
 let currentImageIndex = ref(0)
@@ -31,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="bg-bgLight-400  pt-24 pb-12">
+    <section class="bg-bgLight-400  pt-24 pb-12 ">
         <!-- CONTAINER---->
         <Wrapper class="xl:flex-row max-w-screen-2xl ">
             <!-- IMG---->
@@ -56,7 +56,7 @@ onMounted(() => {
                 ref="fromRight"
                 class="flex flex-col justify-center gap-6 text-center xl:text-left xl:w-1/2 lg:mr-3"
             >
-                <Heading>Czesc, mam na imie Marek</Heading>
+                <Heading class="lg:text-left">Czesc, mam na imie Marek</Heading>
                 <AboutParagraph
                     >Jestem
                     <span class="font-heading text-ownPink-400"
