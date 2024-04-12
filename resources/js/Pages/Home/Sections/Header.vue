@@ -43,7 +43,7 @@ const { fromBottom, opacity } = useGlobalMotion();
                 Wszystko czego potrzebujesz, aby zablysnac w sieci
             </h2>
             <div class="flex flex-col md:flex-row gap-6 md:gap-12 mt-4">
-                <Button href="route('portfolio')" btnType="white"
+                <Button :href="route('portfolio')" btnType="white"
                     >Portfolio</Button
                 >
                 <Button type="anchor" href="#o-mnie" btnType="third"

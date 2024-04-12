@@ -14,7 +14,7 @@ import NavLink from "@/Components/NavLink.vue";
 
         <NavLink
             type="anchor"
-            href="#kontakt"
+            href="/#kontakt"
             :isActive="$page.component === 'Contact/Index'"
             >Kontakt</NavLink
         >

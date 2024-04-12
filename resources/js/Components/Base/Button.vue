@@ -25,11 +25,11 @@ const buttonClasses = {
         :class="buttonClasses[btnType]"
         aria-label="{{ aria }}"
     >
-        >
+        
         <slot></slot
     ></a>
 
-    <Link v-else class="common-btn box-shadow" :class="buttonClasses[btnType]">
+    <Link v-else :href="href" class="common-btn box-shadow" :class="buttonClasses[btnType]">
         <slot></slot>
     </Link>
 </template>
