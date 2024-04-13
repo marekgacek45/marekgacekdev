@@ -1,5 +1,6 @@
 <template>
-    <section id="kontakt" class=" bg-bgLight-400">
+    <section id="kontakt" class=" bg-bgLight-400 ">
+        
         <div class="w-full mx-auto ">
             <Vue3Marquee
                 :pauseOnHover="true"
@@ -19,7 +20,7 @@
         </div>
 
         <!-- CONTAINER---->
-        <Wrapper class="lg:flex-row mt-12">
+        <Wrapper class="lg:flex-row mt-12 max-w-screen-2xl">
             <!-- TEXT---->
             <div
                 class="flex flex-col justify-center gap-6 lg:w-2/5 lg:mr-3 py-12 lg:ml-6 lg:mt-0"

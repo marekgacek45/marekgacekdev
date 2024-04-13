@@ -1,6 +1,6 @@
 <template>
     <section
-        class="section lg:min-h-[calc(100vh-371px)] mt-[71px] bg-ownPurple-400"
+        class="section lg:min-h-[calc(100vh-371px)] mt-[71px] bg-bgLight-400"
     >
         <div
             class="flex flex-col flex-start items-center h-full px-6 sm:px-12 md:px-24 lg:px-0 py-24 gap-12"
@@ -8,24 +8,24 @@
             <!--BUTTONS-->
             <div class="flex flex-wrap justify-center items-center gap-8">
                 <button
-                    class="btn box-shadow"
+                    class="btn box-shadow font-heading"
                     :class="
                         selectedCategory === null
-                            ? 'bg-ownTurquise-400 hover:bg-ownTurquise-600'
+                            ? 'bg-ownPurple-400 hover:bg-ownPurple-600 text-fontLight'
                             : 'bg-ownYellow-400 hover:bg-ownYellow-600'
                     "
                     @click="setCategory(null)"
                 >
-                    ALL
+                    wszystkie
                 </button>
                 <button
                     v-for="category in categories"
                     :key="category.id"
-                    class="btn box-shadow"
+                    class="btn box-shadow "
                     @click="setCategory(category.name)"
                     :class="
                         selectedCategory === category.name
-                            ? 'bg-ownTurquise-400 hover:bg-ownTurquise-600'
+                            ? 'bg-ownPurple-400 hover:bg-ownPurple-600 text-fontLight'
                             : 'bg-ownYellow-400 hover:bg-ownYellow-600'
                     "
                 >
@@ -112,7 +112,7 @@ const openModal = (project) => {
 
 <style scoped>
 .btn {
-    @apply px-10 py-4    text-xl font-text font-bold hover:animate-shake duration-300;
+    @apply px-10 py-4    text-lg font-heading   tracking-widest hover:animate-shake duration-300;
 }
 
 .list-enter-active,

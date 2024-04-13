@@ -9,14 +9,15 @@
             <div class="bg-bgLight-200">
                 <OldSchoolCard
                     :title="activeProject.title"
-                    class="max-w-screen-xl min-w-[60vw]"
+                    class="max-w-screen-xl min-w-[60vw] "
                 >
                     <div
-                        class="flex flex-col lg:flex-row p-8 gap-12 max-h-[80vh]"
+                        class="flex flex-col lg:flex-row p-8 gap-12 max-h-[80vh]  overflow-y-auto"
                     >
                         <div class="lg:w-1/2 h-[400px] max-h-[400px]">
                             <iframe
                                 v-if="activeProject.youtube_link"
+                                
                                 width="560"
                                 height="315"
                                 :src="activeProject.youtube_link"
@@ -24,17 +25,17 @@
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen
-                                class="w-full h-full"
+                                class="min-h-[300px] w-full h-full"
                             ></iframe>
                             <img
                                 v-else
                                 :src="'/storage/' + activeProject.image"
-                                alt=""
+                                alt="miniatuka projektu"
                                 class="w-full h-full object-cover"
                             />
                         </div>
                         <div
-                            class="lg:w-1/2 flex flex-col gap-6 overflow-y-auto max-h-[400px]"
+                            class="lg:w-1/2 flex flex-col gap-6 lg:overflow-y-auto max-h-[400px] "
                         >
                             <a
                                 :href="activeProject.site_link"
@@ -44,15 +45,15 @@
                                 {{ activeProject.title }}
                             </a>
 
-                            <p v-html="activeProject.description"></p>
-                            <!-- <p>{{ activeProject.description }} </p> -->
+                            <p class="font-text" v-html="activeProject.description"></p>
+                          
 
                             <div>
                                 <span class="font-heading text-2xl"
                                     >Wykorzystane technologie</span
                                 >
                                 <div
-                                    class="flex justify-start items-center gap-3 mt-2"
+                                    class="flex justify-start items-center gap-3 mt-2 mb-12"
                                 >
                                     <img
                                         v-for="tool in activeProject.tools"
